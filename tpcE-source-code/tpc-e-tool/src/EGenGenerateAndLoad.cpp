@@ -714,31 +714,31 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 
         //  Now generate and load holdings for this load unit.
         //
-        do
-        {
-            bRet = pTradeGen->GenerateNextHolding();
+//        do
+//        {
+//            bRet = pTradeGen->GenerateNextHolding();
+//
+//            pHoldingsLoad->WriteNextRecord(pTradeGen->GetHoldingRow());
+//
+//            if (++iCnt % 10000 == 0)
+//            {
+//                m_pOutput->OutputProgress("."); //output progress
+//            }
+//
+//            // Commit rows every so often
+//            if (iCnt % 10000 == 0)
+//            {
+//                pHoldingsLoad->Commit();        //commit
+//            }
+//        } while (bRet);
 
-            pHoldingsLoad->WriteNextRecord(pTradeGen->GetHoldingRow());
-
-            if (++iCnt % 10000 == 0)
-            {
-                m_pOutput->OutputProgress("."); //output progress
-            }
-
-            // Commit rows every so often
-            if (iCnt % 10000 == 0)
-            {
-                pHoldingsLoad->Commit();        //commit
-            }
-        } while (bRet);
-
-        pTradesLoad->FinishLoad();          //commit
-        pSettlementLoad->FinishLoad();      //commit
-        pHistoryLoad->FinishLoad();         //commit
-        pCashLoad->FinishLoad();            //commit
-        pBrokerLoad->FinishLoad();          //commit
-        pHoldingHistoryLoad->FinishLoad();  //commit
-        pHoldingsLoad->FinishLoad();        //commit
+//        pTradesLoad->FinishLoad();          //commit
+//        pSettlementLoad->FinishLoad();      //commit
+//        pHistoryLoad->FinishLoad();         //commit
+//        pCashLoad->FinishLoad();            //commit
+//        pBrokerLoad->FinishLoad();          //commit
+//        pHoldingHistoryLoad->FinishLoad();  //commit
+//        pHoldingsLoad->FinishLoad();        //commit
         pHoldingSummaryLoad->FinishLoad();  //commit
         // Not loading TRADE_REQUEST table
         //pRequestsLoad->FinishLoad();      //commit
