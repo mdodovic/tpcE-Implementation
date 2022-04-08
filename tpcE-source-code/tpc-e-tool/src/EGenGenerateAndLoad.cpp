@@ -596,8 +596,9 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
     pCashLoad = m_pLoaderFactory->CreateCashTransactionLoader();
     pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
 
-    m_pOutput->OutputStart("Generating TRADE, SETTLEMENT, TRADE HISTORY, CASH TRANSACTION, "
-                            "HOLDING_HISTORY, HOLDING_SUMMARY, HOLDING, and BROKER tables...");
+    m_pOutput->OutputStart("Generating HOLDING_SUMMARY table...");
+//    m_pOutput->OutputStart("Generating TRADE, SETTLEMENT, TRADE HISTORY, CASH TRANSACTION, "
+//                            "HOLDING_HISTORY, HOLDING_SUMMARY, HOLDING, and BROKER tables...");
 
     pTradeGen = new CTradeGen(m_dfm, m_iCustomerCount, m_iStartFromCustomer,
                               m_iTotalCustomers, m_iLoadUnitSize,
