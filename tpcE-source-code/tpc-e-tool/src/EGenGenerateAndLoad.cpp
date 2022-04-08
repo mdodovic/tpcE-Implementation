@@ -339,7 +339,8 @@ void CGenerateAndLoad::GenerateAndLoadCustomer()
 */
 void CGenerateAndLoad::GenerateAndLoadCustomerAccountAndAccountPermission()
 {
-    bool                                    bRet;
+// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
+	bool                                    bRet;
     CCustomerAccountsAndPermissionsTable    Table(m_dfm, m_iLoadUnitSize, m_iCustomerCount, m_iStartFromCustomer);
     CBaseLoader<CUSTOMER_ACCOUNT_ROW>*      pCALoad = m_pLoaderFactory->CreateCustomerAccountLoader();
 //    CBaseLoader<ACCOUNT_PERMISSION_ROW>*    pAPLoad = m_pLoaderFactory->CreateAccountPermissionLoader();
@@ -566,34 +567,35 @@ void CGenerateAndLoad::GenerateAndLoadFinancial()
 */
 void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 {
-    bool                                bRet;
+// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
+	bool                                bRet;
     CTradeGen*                          pTradeGen;
 
-    CBaseLoader<HOLDING_ROW>*           pHoldingsLoad;
-    CBaseLoader<HOLDING_HISTORY_ROW>*   pHoldingHistoryLoad;
+//    CBaseLoader<HOLDING_ROW>*           pHoldingsLoad;
+//    CBaseLoader<HOLDING_HISTORY_ROW>*   pHoldingHistoryLoad;
     CBaseLoader<HOLDING_SUMMARY_ROW>*   pHoldingSummaryLoad;
-    CBaseLoader<TRADE_ROW>*             pTradesLoad;
+//    CBaseLoader<TRADE_ROW>*             pTradesLoad;
     // Not loading TRADE_REQUEST table (it'll be quickly populated during a run)
     //CBaseLoader<TRADE_REQUEST_ROW>*       pRequestsLoad;
-    CBaseLoader<SETTLEMENT_ROW>*        pSettlementLoad;
-    CBaseLoader<TRADE_HISTORY_ROW>*     pHistoryLoad;
-    CBaseLoader<CASH_TRANSACTION_ROW>*  pCashLoad;
-    CBaseLoader<BROKER_ROW>*            pBrokerLoad;
+//    CBaseLoader<SETTLEMENT_ROW>*        pSettlementLoad;
+//    CBaseLoader<TRADE_HISTORY_ROW>*     pHistoryLoad;
+//    CBaseLoader<CASH_TRANSACTION_ROW>*  pCashLoad;
+//    CBaseLoader<BROKER_ROW>*            pBrokerLoad;
     int                                 iCnt=0;
     int                                 i;
     int                                 iCurrentLoadUnit = 1;
     char                                szCurrentLoadUnit[11];
 
-    pHoldingsLoad = m_pLoaderFactory->CreateHoldingLoader();
-    pHoldingHistoryLoad = m_pLoaderFactory->CreateHoldingHistoryLoader();
+//    pHoldingsLoad = m_pLoaderFactory->CreateHoldingLoader();
+//    pHoldingHistoryLoad = m_pLoaderFactory->CreateHoldingHistoryLoader();
     pHoldingSummaryLoad = m_pLoaderFactory->CreateHoldingSummaryLoader();
-    pTradesLoad = m_pLoaderFactory->CreateTradeLoader();
+//    pTradesLoad = m_pLoaderFactory->CreateTradeLoader();
     // Not loading TRADE_REQUEST table (it'll be quickly populated during a run)
     //pRequestsLoad = m_pLoaderFactory->CreateTradeRequestLoader();
-    pSettlementLoad = m_pLoaderFactory->CreateSettlementLoader();
-    pHistoryLoad = m_pLoaderFactory->CreateTradeHistoryLoader();
-    pCashLoad = m_pLoaderFactory->CreateCashTransactionLoader();
-    pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
+//    pSettlementLoad = m_pLoaderFactory->CreateSettlementLoader();
+//    pHistoryLoad = m_pLoaderFactory->CreateTradeHistoryLoader();
+//    pCashLoad = m_pLoaderFactory->CreateCashTransactionLoader();
+//    pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
 
     m_pOutput->OutputStart("Generating HOLDING_SUMMARY table...");
 //    m_pOutput->OutputStart("Generating TRADE, SETTLEMENT, TRADE HISTORY, CASH TRANSACTION, "
@@ -604,8 +606,6 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
                               m_iScaleFactor, m_iHoursOfInitialTrades,
                               m_bCacheEnabled
                              );
-
-// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
 
 	// Generate and load one load unit at a time.
     //
@@ -749,16 +749,16 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 
     } while (pTradeGen->InitNextLoadUnit());
 
-    delete pHoldingsLoad;
-    delete pHoldingHistoryLoad;
+//    delete pHoldingsLoad;
+//    delete pHoldingHistoryLoad;
     delete pHoldingSummaryLoad;
-    delete pTradesLoad;
+//    delete pTradesLoad;
     // Not loading TRADE_REQUEST table
     //delete pRequestsLoad;
-    delete pSettlementLoad;
-    delete pHistoryLoad;
-    delete pCashLoad;
-    delete pBrokerLoad;
+//    delete pSettlementLoad;
+//    delete pHistoryLoad;
+//    delete pCashLoad;
+//    delete pBrokerLoad;
 
     delete pTradeGen;
 
