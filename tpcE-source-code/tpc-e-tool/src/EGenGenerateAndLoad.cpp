@@ -1148,15 +1148,16 @@ void CGenerateAndLoad::GenerateAndLoadZipCode()
 */
 void CGenerateAndLoad::GenerateAndLoadFixedTables()
 {
-    GenerateAndLoadCharge();
-    GenerateAndLoadCommissionRate();
-    GenerateAndLoadExchange();
-    GenerateAndLoadIndustry();
-    GenerateAndLoadSector();
-    GenerateAndLoadStatusType();
-    GenerateAndLoadTaxrate();
-    GenerateAndLoadTradeType();
-    GenerateAndLoadZipCode();
+// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
+//    GenerateAndLoadCharge();
+//    GenerateAndLoadCommissionRate();
+//    GenerateAndLoadExchange();
+//    GenerateAndLoadIndustry();
+//    GenerateAndLoadSector();
+//    GenerateAndLoadStatusType();
+//    GenerateAndLoadTaxrate();
+//    GenerateAndLoadTradeType();
+//    GenerateAndLoadZipCode();
 }
 
 /*
@@ -1173,23 +1174,25 @@ void CGenerateAndLoad::GenerateAndLoadFixedTables()
 */
 void CGenerateAndLoad::GenerateAndLoadScalingTables()
 {
-    // Customer-related tables
+// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
+
+	// Customer-related tables
     //
-    GenerateAndLoadAddress();
+//    GenerateAndLoadAddress();
     GenerateAndLoadCustomer();
     GenerateAndLoadCustomerAccountAndAccountPermission();
-    GenerateAndLoadCustomerTaxrate();
-    GenerateAndLoadWatchListAndWatchItem();
+//    GenerateAndLoadCustomerTaxrate();
+//    GenerateAndLoadWatchListAndWatchItem();
 
     // Now security/company related tables
     //
-    GenerateAndLoadCompany();
-    GenerateAndLoadCompanyCompetitor();
-    GenerateAndLoadDailyMarket();
-    GenerateAndLoadFinancial();
+//    GenerateAndLoadCompany();
+//    GenerateAndLoadCompanyCompetitor();
+//    GenerateAndLoadDailyMarket();
+//    GenerateAndLoadFinancial();
     GenerateAndLoadLastTrade();
-    GenerateAndLoadNewsItemAndNewsXRef();
-    GenerateAndLoadSecurity();
+//    GenerateAndLoadNewsItemAndNewsXRef();
+//    GenerateAndLoadSecurity();
 }
 
 /*
