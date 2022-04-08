@@ -342,14 +342,15 @@ void CGenerateAndLoad::GenerateAndLoadCustomerAccountAndAccountPermission()
     bool                                    bRet;
     CCustomerAccountsAndPermissionsTable    Table(m_dfm, m_iLoadUnitSize, m_iCustomerCount, m_iStartFromCustomer);
     CBaseLoader<CUSTOMER_ACCOUNT_ROW>*      pCALoad = m_pLoaderFactory->CreateCustomerAccountLoader();
-    CBaseLoader<ACCOUNT_PERMISSION_ROW>*    pAPLoad = m_pLoaderFactory->CreateAccountPermissionLoader();
+//    CBaseLoader<ACCOUNT_PERMISSION_ROW>*    pAPLoad = m_pLoaderFactory->CreateAccountPermissionLoader();
     INT64                                   iCnt=0;
     UINT                                    i;
 
-    m_pOutput->OutputStart("Generating CUSTOMER_ACCOUNT table and ACCOUNT_PERMISSION table...");
+	m_pOutput->OutputStart("Generating CUSTOMER_ACCOUNT table ...");
+//	m_pOutput->OutputStart("Generating CUSTOMER_ACCOUNT table and ACCOUNT_PERMISSION table...");
 
     pCALoad->Init();
-    pAPLoad->Init();
+//    pAPLoad->Init();
 
     do
     {
@@ -357,12 +358,10 @@ void CGenerateAndLoad::GenerateAndLoadCustomerAccountAndAccountPermission()
 
         pCALoad->WriteNextRecord(Table.GetCARow());
 
-        for(i=0; i<Table.GetCAPermsCount(); ++i)
-        {
-
-            pAPLoad->WriteNextRecord(Table.GetAPRow(i));
-
-        }
+//        for(i=0; i<Table.GetCAPermsCount(); ++i)
+//        {
+//            pAPLoad->WriteNextRecord(Table.GetAPRow(i));
+//        }
 
         if (++iCnt % 10000 == 0)
         {
@@ -373,16 +372,16 @@ void CGenerateAndLoad::GenerateAndLoadCustomerAccountAndAccountPermission()
         if (iCnt % 10000 == 0)
         {
             pCALoad->Commit();
-            pAPLoad->Commit();
+//            pAPLoad->Commit();
         }
 
     } while (bRet);
     pCALoad->FinishLoad();  //commit
-    pAPLoad->FinishLoad();  //commit
+//    pAPLoad->FinishLoad();  //commit
     delete pCALoad;
-    delete pAPLoad;
+//    delete pAPLoad;
 
-    m_pOutput->OutputComplete("loaded.");
+    m_pOutput->OutputComplete(" loaded.");
     m_pOutput->OutputNewline();
     m_pOutput->OutputNewline();
 }
