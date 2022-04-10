@@ -1,0 +1,22 @@
+﻿Build started 4/10/2022 2:42:16 PM.
+     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenGenerateAndLoad.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenLoader.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D COMPILE_ODBC_LOAD /D COMPILE_FLAT_FILE_LOAD /D _CRT_SECURE_NO_DEPRECATE /D _BIND_TO_CURRENT_VCLIBS_VERSION /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"../inc/EGenGenerateAndLoad_StdAfx.h" /Fp"..\..\obj\Debug_Win32\EGenGenerateAndLoad.pch" /Fo"..\..\obj\Debug_Win32\\" /Fd"..\..\lib\Debug_Win32\EGenGenerateAndLoad.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\EGenGenerateAndLoad.cpp
+         EGenGenerateAndLoad.cpp
+     1>c:\users\matija\desktop\denormalized-databases\tpce-source-code\tpc-e-tool\src\egengenerateandload.cpp(348): warning C4101: 'i' : unreferenced local variable
+     1>c:\users\matija\desktop\denormalized-databases\tpce-source-code\tpc-e-tool\src\egengenerateandload.cpp(585): warning C4101: 'i' : unreferenced local variable
+     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenGenerateAndLoad.vcxproj" (1) is building "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenTables.vcxproj" (2:3) on node 2 (GetResolvedLinkLibs target(s)).
+     2>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLoader.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+   2:3>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenTables.vcxproj" (2:3) is building "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenDriverMEELib.vcxproj" (3:3) on node 2 (GetResolvedLinkLibs target(s)).
+     3>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLoader.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     3>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenDriverMEELib.vcxproj" (GetResolvedLinkLibs target(s)).
+     2>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenTables.vcxproj" (GetResolvedLinkLibs target(s)).
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\lib\Debug_Win32\EGenGenerateAndLoad.lib" /NOLOGO ..\..\obj\Debug_Win32\EGenGenerateAndLoad.obj
+         EGenGenerateAndLoad.vcxproj -> C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\lib\Debug_Win32\EGenGenerateAndLoad.lib
+     1>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenGenerateAndLoad.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:16.34
