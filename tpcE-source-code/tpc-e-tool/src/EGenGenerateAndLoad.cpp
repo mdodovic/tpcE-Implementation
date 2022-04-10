@@ -571,31 +571,31 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 	bool                                bRet;
     CTradeGen*                          pTradeGen;
 
-//    CBaseLoader<HOLDING_ROW>*           pHoldingsLoad;
-//    CBaseLoader<HOLDING_HISTORY_ROW>*   pHoldingHistoryLoad;
+    CBaseLoader<HOLDING_ROW>*           pHoldingsLoad;
+    CBaseLoader<HOLDING_HISTORY_ROW>*   pHoldingHistoryLoad;
     CBaseLoader<HOLDING_SUMMARY_ROW>*   pHoldingSummaryLoad;
-//    CBaseLoader<TRADE_ROW>*             pTradesLoad;
+    CBaseLoader<TRADE_ROW>*             pTradesLoad;
     // Not loading TRADE_REQUEST table (it'll be quickly populated during a run)
     //CBaseLoader<TRADE_REQUEST_ROW>*       pRequestsLoad;
-//    CBaseLoader<SETTLEMENT_ROW>*        pSettlementLoad;
-//    CBaseLoader<TRADE_HISTORY_ROW>*     pHistoryLoad;
-//    CBaseLoader<CASH_TRANSACTION_ROW>*  pCashLoad;
-//    CBaseLoader<BROKER_ROW>*            pBrokerLoad;
+    CBaseLoader<SETTLEMENT_ROW>*        pSettlementLoad;
+    CBaseLoader<TRADE_HISTORY_ROW>*     pHistoryLoad;
+    CBaseLoader<CASH_TRANSACTION_ROW>*  pCashLoad;
+    CBaseLoader<BROKER_ROW>*            pBrokerLoad;
     int                                 iCnt=0;
     int                                 i;
     int                                 iCurrentLoadUnit = 1;
     char                                szCurrentLoadUnit[11];
 
-//    pHoldingsLoad = m_pLoaderFactory->CreateHoldingLoader();
-//    pHoldingHistoryLoad = m_pLoaderFactory->CreateHoldingHistoryLoader();
+    pHoldingsLoad = m_pLoaderFactory->CreateHoldingLoader();
+    pHoldingHistoryLoad = m_pLoaderFactory->CreateHoldingHistoryLoader();
     pHoldingSummaryLoad = m_pLoaderFactory->CreateHoldingSummaryLoader();
-//    pTradesLoad = m_pLoaderFactory->CreateTradeLoader();
+    pTradesLoad = m_pLoaderFactory->CreateTradeLoader();
     // Not loading TRADE_REQUEST table (it'll be quickly populated during a run)
     //pRequestsLoad = m_pLoaderFactory->CreateTradeRequestLoader();
-//    pSettlementLoad = m_pLoaderFactory->CreateSettlementLoader();
-//    pHistoryLoad = m_pLoaderFactory->CreateTradeHistoryLoader();
-//    pCashLoad = m_pLoaderFactory->CreateCashTransactionLoader();
-//    pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
+    pSettlementLoad = m_pLoaderFactory->CreateSettlementLoader();
+    pHistoryLoad = m_pLoaderFactory->CreateTradeHistoryLoader();
+    pCashLoad = m_pLoaderFactory->CreateCashTransactionLoader();
+    pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
 
     m_pOutput->OutputStart("Generating HOLDING_SUMMARY table...");
 //    m_pOutput->OutputStart("Generating TRADE, SETTLEMENT, TRADE HISTORY, CASH TRANSACTION, "
@@ -611,85 +611,85 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
     //
     do
     {
-//        pTradesLoad->Init();
-//        pSettlementLoad->Init();
-//        pHistoryLoad->Init();
-//        pCashLoad->Init();
-//        pBrokerLoad->Init();
-//        pHoldingHistoryLoad->Init();
-//        pHoldingsLoad->Init();
+       pTradesLoad->Init();
+       pSettlementLoad->Init();
+       pHistoryLoad->Init();
+       pCashLoad->Init();
+       pBrokerLoad->Init();
+       pHoldingHistoryLoad->Init();
+       pHoldingsLoad->Init();
         pHoldingSummaryLoad->Init();
         // Not loading TRADE_REQUEST table
         //pRequestsLoad->Init();
 
         // Generate and load trades for this load unit.
         //
-//        do
-//        {
-//            bRet = pTradeGen->GenerateNextTrade();
-//
-//            pTradesLoad->WriteNextRecord(pTradeGen->GetTradeRow());
-//
-//            for ( i=0; i<pTradeGen->GetTradeHistoryRowCount(); ++i)
-//            {
-//                pHistoryLoad->WriteNextRecord(pTradeGen->GetTradeHistoryRow(i));
-//            }
-//
-//           if ( pTradeGen->GetSettlementRowCount() )
-//            {
-//                pSettlementLoad->WriteNextRecord(pTradeGen->GetSettlementRow());
-//            }
-//
-//            if ( pTradeGen->GetCashTransactionRowCount() )
-//            {
-//                pCashLoad->WriteNextRecord(pTradeGen->GetCashTransactionRow());
-//            }
-//	
-//            for ( i=0; i<pTradeGen->GetHoldingHistoryRowCount(); ++i)
-//            {
-//                pHoldingHistoryLoad->WriteNextRecord(pTradeGen->GetHoldingHistoryRow(i));
-//            }
-//
-//            /*if ((pTradeGen->GetTradeRow())->m_iTradeStatus == eCompleted) // Not loading TRADE_REQUEST table
-//            {
-//            pRequestsLoad->WriteNextRecord(pTradeGen->GetTradeRequestRow());
-//            }*/
-//
-//            if (++iCnt % 10000 == 0)
-//            {
-//                m_pOutput->OutputProgress("."); //output progress
-//            }
-//
-//            // Commit rows every so often
-//            if (iCnt % 10000 == 0)
-//            {
-//                pTradesLoad->Commit();          //commit
-//                pSettlementLoad->Commit();      //commit
-//                pHistoryLoad->Commit();         //commit
-//                pCashLoad->Commit();
-//                pHoldingHistoryLoad->Commit();  //commit
-//                // Not loading TRADE_REQUEST table
-//                //pRequestsLoad->Commit();      //commit
-//            }
-//
-//        } while (bRet);
+       do
+       {
+           bRet = pTradeGen->GenerateNextTrade();
+		   /*
+           pTradesLoad->WriteNextRecord(pTradeGen->GetTradeRow());
+
+           for ( i=0; i<pTradeGen->GetTradeHistoryRowCount(); ++i)
+           {
+               pHistoryLoad->WriteNextRecord(pTradeGen->GetTradeHistoryRow(i));
+           }
+
+          if ( pTradeGen->GetSettlementRowCount() )
+           {
+               pSettlementLoad->WriteNextRecord(pTradeGen->GetSettlementRow());
+           }
+
+           if ( pTradeGen->GetCashTransactionRowCount() )
+           {
+               pCashLoad->WriteNextRecord(pTradeGen->GetCashTransactionRow());
+           }
+	
+           for ( i=0; i<pTradeGen->GetHoldingHistoryRowCount(); ++i)
+           {
+               pHoldingHistoryLoad->WriteNextRecord(pTradeGen->GetHoldingHistoryRow(i));
+           }
+		   */
+           /*if ((pTradeGen->GetTradeRow())->m_iTradeStatus == eCompleted) // Not loading TRADE_REQUEST table
+           {
+           pRequestsLoad->WriteNextRecord(pTradeGen->GetTradeRequestRow());
+           }*/
+
+           if (++iCnt % 10000 == 0)
+           {
+               m_pOutput->OutputProgress("."); //output progress
+           }
+
+           // Commit rows every so often
+           if (iCnt % 10000 == 0)
+           {
+               pTradesLoad->Commit();          //commit
+               pSettlementLoad->Commit();      //commit
+               pHistoryLoad->Commit();         //commit
+               pCashLoad->Commit();
+               pHoldingHistoryLoad->Commit();  //commit
+               // Not loading TRADE_REQUEST table
+               //pRequestsLoad->Commit();      //commit
+           }
+
+       } while (bRet);
 
         // After trades generate and load BROKER table.
         //
-//        do
-//        {
-//            bRet = pTradeGen->GenerateNextBrokerRecord();
-//
-//            pBrokerLoad->WriteNextRecord(pTradeGen->GetBrokerRow());
-//
-//            // Commit rows every so often
-//            if (++iCnt % 10000 == 0)
-//            {
-//                pBrokerLoad->Commit();      //commit
-//            }
-//        } while (bRet);
-//
-//        m_pOutput->OutputProgress("t");
+       do
+       {
+           bRet = pTradeGen->GenerateNextBrokerRecord();
+
+           pBrokerLoad->WriteNextRecord(pTradeGen->GetBrokerRow());
+
+           // Commit rows every so often
+           if (++iCnt % 10000 == 0)
+           {
+               pBrokerLoad->Commit();      //commit
+           }
+       } while (bRet);
+
+       m_pOutput->OutputProgress("t");
 
         //  Now generate and load HOLDING_SUMMARY rows for this load unit.
         //
@@ -713,31 +713,31 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 
         //  Now generate and load holdings for this load unit.
         //
-//        do
-//        {
-//            bRet = pTradeGen->GenerateNextHolding();
-//
-//            pHoldingsLoad->WriteNextRecord(pTradeGen->GetHoldingRow());
-//
-//            if (++iCnt % 10000 == 0)
-//            {
-//                m_pOutput->OutputProgress("."); //output progress
-//            }
-//
-//            // Commit rows every so often
-//            if (iCnt % 10000 == 0)
-//            {
-//                pHoldingsLoad->Commit();        //commit
-//            }
-//        } while (bRet);
+       do
+       {
+           bRet = pTradeGen->GenerateNextHolding();
 
-//        pTradesLoad->FinishLoad();          //commit
-//        pSettlementLoad->FinishLoad();      //commit
-//        pHistoryLoad->FinishLoad();         //commit
-//        pCashLoad->FinishLoad();            //commit
-//        pBrokerLoad->FinishLoad();          //commit
-//        pHoldingHistoryLoad->FinishLoad();  //commit
-//        pHoldingsLoad->FinishLoad();        //commit
+           //pHoldingsLoad->WriteNextRecord(pTradeGen->GetHoldingRow());
+
+           if (++iCnt % 10000 == 0)
+           {
+               m_pOutput->OutputProgress("."); //output progress
+           }
+
+           // Commit rows every so often
+           if (iCnt % 10000 == 0)
+           {
+               pHoldingsLoad->Commit();        //commit
+           }
+       } while (bRet);
+
+       pTradesLoad->FinishLoad();          //commit
+       pSettlementLoad->FinishLoad();      //commit
+       pHistoryLoad->FinishLoad();         //commit
+       pCashLoad->FinishLoad();            //commit
+       pBrokerLoad->FinishLoad();          //commit
+       pHoldingHistoryLoad->FinishLoad();  //commit
+       pHoldingsLoad->FinishLoad();        //commit
         pHoldingSummaryLoad->FinishLoad();  //commit
         // Not loading TRADE_REQUEST table
         //pRequestsLoad->FinishLoad();      //commit
@@ -749,16 +749,16 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 
     } while (pTradeGen->InitNextLoadUnit());
 
-//    delete pHoldingsLoad;
-//    delete pHoldingHistoryLoad;
+    delete pHoldingsLoad;
+    delete pHoldingHistoryLoad;
     delete pHoldingSummaryLoad;
-//    delete pTradesLoad;
+    delete pTradesLoad;
     // Not loading TRADE_REQUEST table
     //delete pRequestsLoad;
-//    delete pSettlementLoad;
-//    delete pHistoryLoad;
-//    delete pCashLoad;
-//    delete pBrokerLoad;
+    delete pSettlementLoad;
+    delete pHistoryLoad;
+    delete pCashLoad;
+    delete pBrokerLoad;
 
     delete pTradeGen;
 
@@ -1150,15 +1150,15 @@ void CGenerateAndLoad::GenerateAndLoadZipCode()
 void CGenerateAndLoad::GenerateAndLoadFixedTables()
 {
 // Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
-//    GenerateAndLoadCharge();
-//    GenerateAndLoadCommissionRate();
-//    GenerateAndLoadExchange();
-//    GenerateAndLoadIndustry();
-//    GenerateAndLoadSector();
-//    GenerateAndLoadStatusType();
-//    GenerateAndLoadTaxrate();
-//    GenerateAndLoadTradeType();
-//    GenerateAndLoadZipCode();
+//   GenerateAndLoadCharge();
+//   GenerateAndLoadCommissionRate();
+//   GenerateAndLoadExchange();
+//   GenerateAndLoadIndustry();
+//   GenerateAndLoadSector();
+//   GenerateAndLoadStatusType();
+//   GenerateAndLoadTaxrate();
+//   GenerateAndLoadTradeType();
+//   GenerateAndLoadZipCode();
 }
 
 /*
@@ -1179,20 +1179,20 @@ void CGenerateAndLoad::GenerateAndLoadScalingTables()
 
 	// Customer-related tables
     //
-//    GenerateAndLoadAddress();
+//   GenerateAndLoadAddress();
     GenerateAndLoadCustomer();
     GenerateAndLoadCustomerAccountAndAccountPermission();
-//    GenerateAndLoadCustomerTaxrate();
-//    GenerateAndLoadWatchListAndWatchItem();
+//   GenerateAndLoadCustomerTaxrate();
+//   GenerateAndLoadWatchListAndWatchItem();
 
     // Now security/company related tables
     //
-//    GenerateAndLoadCompany();
-//    GenerateAndLoadCompanyCompetitor();
-//    GenerateAndLoadDailyMarket();
-//    GenerateAndLoadFinancial();
+//   GenerateAndLoadCompany();
+//   GenerateAndLoadCompanyCompetitor();
+//   GenerateAndLoadDailyMarket();
+//   GenerateAndLoadFinancial();
     GenerateAndLoadLastTrade();
-//    GenerateAndLoadNewsItemAndNewsXRef();
+//   GenerateAndLoadNewsItemAndNewsXRef();
 //    GenerateAndLoadSecurity();
 }
 
