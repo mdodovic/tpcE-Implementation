@@ -676,7 +676,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 
         // After trades generate and load BROKER table.
         //
-       do
+/*       do
        {
            bRet = pTradeGen->GenerateNextBrokerRecord();
 
@@ -688,7 +688,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
                pBrokerLoad->Commit();      //commit
            }
        } while (bRet);
-
+*/
        m_pOutput->OutputProgress("t");
 
         //  Now generate and load HOLDING_SUMMARY rows for this load unit.
