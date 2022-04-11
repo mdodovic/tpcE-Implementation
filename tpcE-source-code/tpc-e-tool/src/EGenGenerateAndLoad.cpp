@@ -580,7 +580,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
     CBaseLoader<SETTLEMENT_ROW>*        pSettlementLoad;
     CBaseLoader<TRADE_HISTORY_ROW>*     pHistoryLoad;
     CBaseLoader<CASH_TRANSACTION_ROW>*  pCashLoad;
-    CBaseLoader<BROKER_ROW>*            pBrokerLoad;
+//    CBaseLoader<BROKER_ROW>*            pBrokerLoad;
     int                                 iCnt=0;
     int                                 i;
     int                                 iCurrentLoadUnit = 1;
@@ -595,7 +595,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
     pSettlementLoad = m_pLoaderFactory->CreateSettlementLoader();
     pHistoryLoad = m_pLoaderFactory->CreateTradeHistoryLoader();
     pCashLoad = m_pLoaderFactory->CreateCashTransactionLoader();
-    pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
+//    pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
 
     m_pOutput->OutputStart("Generating HOLDING_SUMMARY table...");
 //    m_pOutput->OutputStart("Generating TRADE, SETTLEMENT, TRADE HISTORY, CASH TRANSACTION, "
@@ -615,7 +615,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
        pSettlementLoad->Init();
        pHistoryLoad->Init();
        pCashLoad->Init();
-       pBrokerLoad->Init();
+//       pBrokerLoad->Init();
        pHoldingHistoryLoad->Init();
        pHoldingsLoad->Init();
         pHoldingSummaryLoad->Init();
@@ -735,7 +735,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
        pSettlementLoad->FinishLoad();      //commit
        pHistoryLoad->FinishLoad();         //commit
        pCashLoad->FinishLoad();            //commit
-       pBrokerLoad->FinishLoad();          //commit
+//       pBrokerLoad->FinishLoad();          //commit
        pHoldingHistoryLoad->FinishLoad();  //commit
        pHoldingsLoad->FinishLoad();        //commit
         pHoldingSummaryLoad->FinishLoad();  //commit
@@ -758,7 +758,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
     delete pSettlementLoad;
     delete pHistoryLoad;
     delete pCashLoad;
-    delete pBrokerLoad;
+//    delete pBrokerLoad;
 
     delete pTradeGen;
 
