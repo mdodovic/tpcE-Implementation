@@ -571,7 +571,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 	bool                                bRet;
     CTradeGen*                          pTradeGen;
 
-    CBaseLoader<HOLDING_ROW>*           pHoldingsLoad;
+//    CBaseLoader<HOLDING_ROW>*           pHoldingsLoad;
     CBaseLoader<HOLDING_HISTORY_ROW>*   pHoldingHistoryLoad;
     CBaseLoader<HOLDING_SUMMARY_ROW>*   pHoldingSummaryLoad;
     CBaseLoader<TRADE_ROW>*             pTradesLoad;
@@ -586,7 +586,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
     int                                 iCurrentLoadUnit = 1;
     char                                szCurrentLoadUnit[11];
 
-    pHoldingsLoad = m_pLoaderFactory->CreateHoldingLoader();
+//    pHoldingsLoad = m_pLoaderFactory->CreateHoldingLoader();
     pHoldingHistoryLoad = m_pLoaderFactory->CreateHoldingHistoryLoader();
     pHoldingSummaryLoad = m_pLoaderFactory->CreateHoldingSummaryLoader();
     pTradesLoad = m_pLoaderFactory->CreateTradeLoader();
@@ -617,7 +617,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
        pCashLoad->Init();
 //       pBrokerLoad->Init();
        pHoldingHistoryLoad->Init();
-       pHoldingsLoad->Init();
+//       pHoldingsLoad->Init();
         pHoldingSummaryLoad->Init();
         // Not loading TRADE_REQUEST table
         //pRequestsLoad->Init();
@@ -713,7 +713,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 
         //  Now generate and load holdings for this load unit.
         //
-       do
+/*       do
        {
            bRet = pTradeGen->GenerateNextHolding();
 
@@ -730,14 +730,14 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
                pHoldingsLoad->Commit();        //commit
            }
        } while (bRet);
-
+*/
        pTradesLoad->FinishLoad();          //commit
        pSettlementLoad->FinishLoad();      //commit
        pHistoryLoad->FinishLoad();         //commit
        pCashLoad->FinishLoad();            //commit
 //       pBrokerLoad->FinishLoad();          //commit
        pHoldingHistoryLoad->FinishLoad();  //commit
-       pHoldingsLoad->FinishLoad();        //commit
+//       pHoldingsLoad->FinishLoad();        //commit
         pHoldingSummaryLoad->FinishLoad();  //commit
         // Not loading TRADE_REQUEST table
         //pRequestsLoad->FinishLoad();      //commit
@@ -749,7 +749,7 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 
     } while (pTradeGen->InitNextLoadUnit());
 
-    delete pHoldingsLoad;
+//    delete pHoldingsLoad;
     delete pHoldingHistoryLoad;
     delete pHoldingSummaryLoad;
     delete pTradesLoad;
