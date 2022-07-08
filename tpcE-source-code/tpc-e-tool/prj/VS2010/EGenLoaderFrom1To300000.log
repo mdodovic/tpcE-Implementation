@@ -1,0 +1,8 @@
+EGenLoader (EGen v1.14.0) 0 2022-04-02 12:20:24.941 Loader Settings:
+Parameter                               Default	Current	Default?
+Configured Customers:                   5000	300000
+Starting Customer:                      1	1
+Customer Count:                         5000	300000
+Scale Factor:                           500	500	YES
+Days of Initial Trades:                 300	300	YES
+
