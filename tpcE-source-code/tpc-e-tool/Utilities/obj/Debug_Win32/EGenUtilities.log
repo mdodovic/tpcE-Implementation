@@ -1,0 +1,20 @@
+﻿Build started 4/2/2022 12:39:52 PM.
+     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\Utilities\prj\VS2010\EGenUtilities.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D COMPILE_ODBC_LOAD /D COMPILE_FLAT_FILE_LOAD /D _CRT_SECURE_NO_DEPRECATE /D _BIND_TO_CURRENT_VCLIBS_VERSION /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /RTC1 /MDd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\..\obj\Debug_Win32\\" /Fd"..\..\lib\Debug_Win32\EGenUtilities.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\Random.cpp
+         Random.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\lib\Debug_Win32\EGenUtilities.lib" /NOLOGO ..\..\obj\Debug_Win32\DateTime.obj
+         ..\..\obj\Debug_Win32\EGenVersion.obj
+         ..\..\obj\Debug_Win32\error.obj
+         ..\..\obj\Debug_Win32\locking.obj
+         ..\..\obj\Debug_Win32\Money.obj
+         ..\..\obj\Debug_Win32\Random.obj
+         ..\..\obj\Debug_Win32\threading.obj
+         ..\..\obj\Debug_Win32\condition.obj
+         EGenUtilities.vcxproj -> C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\Utilities\prj\VS2010\..\..\lib\Debug_Win32\EGenUtilities.lib
+     1>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\Utilities\prj\VS2010\EGenUtilities.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.44
