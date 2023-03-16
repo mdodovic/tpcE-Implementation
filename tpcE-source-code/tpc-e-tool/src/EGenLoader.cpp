@@ -73,12 +73,12 @@ char                szLoaderParms[1024];
 #endif
 
 #ifndef FLAT_IN_PATH
-#define FLAT_IN_PATH "D:/flatIn_forDataGeneration/flat_in/"
+#define FLAT_IN_PATH "C:/Users/matij/Desktop/HyperRelations/flat_in/"
 //#define FLAT_IN_PATH "flat_in/"
 #endif
 
 #ifndef FLAT_OUT_PATH
-#define FLAT_OUT_PATH "D:/flatOut_dataForDatabase/1e3_customers/flat_out/"
+#define FLAT_OUT_PATH "C:/Users/matij/Desktop/HyperRelations/flat_out/"
 //#define FLAT_OUT_PATH "flat_out/"
 #endif
 
