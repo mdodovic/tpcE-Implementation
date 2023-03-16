@@ -14,10 +14,8 @@ private:
 	// int bvCnt, cpCnt, mwCnt, sdCnt, tlCnt, toCnt, tsCnt, tuCnt;
 public:
 	MEESUTImpl() {
-		cout << endl << "USLOO" << endl;
 		fout.open("./xyz.txt", ios::out);
 		fout << "EXEC " << "DataMaintenanceFrame1 ";
-		cout << endl << "USLO2" << endl;
 	}
 	virtual bool TradeResult( PTradeResultTxnInput pTxnInput );
     virtual bool MarketFeed( PMarketFeedTxnInput pTxnInput );

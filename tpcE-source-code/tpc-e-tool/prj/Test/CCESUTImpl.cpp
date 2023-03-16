@@ -111,8 +111,8 @@ bool CCESUTImpl::TradeStatus( PTradeStatusTxnInput pTxnInput )
 }
 
 // 14%, Customer init., Medium, Read-Only
-bool CCESUTImpl::SecurityDetail( PSecurityDetailTxnInput pTxnInput ) { 
-	return false;
+bool CCESUTImpl::SecurityDetail( PSecurityDetailTxnInput pTxnInput ) 
+{ 
 	fout << "EXEC " << "SecurityDetailFrame1 "
 		<< pTxnInput->access_lob_flag << ","
 		<< pTxnInput->max_rows_to_return << ","
@@ -124,8 +124,8 @@ bool CCESUTImpl::SecurityDetail( PSecurityDetailTxnInput pTxnInput ) {
 }
 
 // 8%, Customer/Broker init., Medium, Read-Only
-bool CCESUTImpl::TradeLookup( PTradeLookupTxnInput pTxnInput ) { 
-	return false;
+bool CCESUTImpl::TradeLookup( PTradeLookupTxnInput pTxnInput ) 
+{ 
 	if (pTxnInput->frame_to_execute == 1) {
 		fout << "EXEC " << "TradeLookupFrame1 " 
 			<< pTxnInput->max_trades << ","
@@ -158,7 +158,6 @@ bool CCESUTImpl::TradeLookup( PTradeLookupTxnInput pTxnInput ) {
 // 2%, Read-Write
 bool CCESUTImpl::TradeUpdate( PTradeUpdateTxnInput pTxnInput ) 
 { 
-	return false;
 	if (pTxnInput->frame_to_execute == 1)
 	{
 		fout << "EXEC " << "TradeUpdateFrame1 " 
@@ -205,8 +204,8 @@ string EscapeQuote(string str) {
 }
 
 // 10, ReadWrite,
-bool CCESUTImpl::TradeOrder( PTradeOrderTxnInput pTxnInput, INT32 iTradeType, bool bExecutorIsAccountOwner ) {
-	return false;
+bool CCESUTImpl::TradeOrder( PTradeOrderTxnInput pTxnInput, INT32 iTradeType, bool bExecutorIsAccountOwner ) 
+{
 	fout << "EXEC " << "TradeOrderFrame1 "
 		<< pTxnInput->acct_id << ",'"
 		<< pTxnInput->exec_f_name << "','"

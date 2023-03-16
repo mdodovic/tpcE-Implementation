@@ -34,7 +34,7 @@ int main()
 	DataFileManager dfm(dataEnumerationsDir);
 	PDriverCETxnSettings dcetSettings = new TDriverCETxnSettings();
 
-	printf("Pre punjenja1!\n");
+	printf("Start ...\n");
 
 	try {
 //		const int CONFIGURED_CUSTOMER_COUNT = 20000;
@@ -77,7 +77,7 @@ int main()
 		// Process transactions...
 		int transactionCount = 0;
 		dm.DoCleanupTxn();
-		while (transactionCount < 1000000)
+		while (transactionCount < 1000)
 		{
 			c.DoTxn();
 			transactionCount++;
@@ -86,7 +86,7 @@ int main()
 		m.GenerateTradeResult();
 		
 		// Data maintenance
-		while (transactionCount < 100000) 
+		while (transactionCount < 100) 
 		{
 			dm.DoTxn();
 			transactionCount++;
