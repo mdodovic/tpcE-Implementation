@@ -1,37 +1,18 @@
-﻿Build started 4/2/2022 12:40:23 PM.
-     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenTables.vcxproj" on node 2 (Build target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLoader.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D COMPILE_ODBC_LOAD /D COMPILE_FLAT_FILE_LOAD /D _CRT_SECURE_NO_DEPRECATE /D _BIND_TO_CURRENT_VCLIBS_VERSION /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\..\obj\Debug_Win32\\" /Fd"..\..\lib\Debug_Win32\EGenTables.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\AddressTable.cpp ..\..\src\CustomerSelection.cpp ..\..\src\CustomerTable.cpp ..\..\src\ExchangeTable.cpp ..\..\src\MEESecurity.cpp ..\..\src\Person.cpp ..\..\src\TradeGen.cpp
-         AddressTable.cpp
-         Generating Code...
-         Compiling...
-         TradeGen.cpp
-         Person.cpp
-         MEESecurity.cpp
-         ExchangeTable.cpp
-         CustomerTable.cpp
-         CustomerSelection.cpp
-         Generating Code...
-       Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\lib\Debug_Win32\EGenTables.lib" /NOLOGO ..\..\obj\Debug_Win32\AddressTable.obj
-         ..\..\obj\Debug_Win32\ChargeTable.obj
-         ..\..\obj\Debug_Win32\CommissionRateTable.obj
-         ..\..\obj\Debug_Win32\CustomerSelection.obj
-         ..\..\obj\Debug_Win32\CustomerTable.obj
-         ..\..\obj\Debug_Win32\ExchangeTable.obj
-         ..\..\obj\Debug_Win32\IndustryTable.obj
-         ..\..\obj\Debug_Win32\MEESecurity.obj
-         ..\..\obj\Debug_Win32\Person.obj
-         ..\..\obj\Debug_Win32\SectorTable.obj
-         ..\..\obj\Debug_Win32\StatusTypeTable.obj
-         ..\..\obj\Debug_Win32\TaxRateTable.obj
-         ..\..\obj\Debug_Win32\TradeGen.obj
-         ..\..\obj\Debug_Win32\TradeTypeTable.obj
-         ..\..\obj\Debug_Win32\ZipCodeTable.obj
-         EGenTables.vcxproj -> C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\lib\Debug_Win32\EGenTables.lib
-     1>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenTables.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:11.23
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  ZipCodeTable.cpp
+  TradeTypeTable.cpp
+  TradeGen.cpp
+  TaxRateTable.cpp
+  StatusTypeTable.cpp
+  SectorTable.cpp
+  Person.cpp
+  MEESecurity.cpp
+  IndustryTable.cpp
+  ExchangeTable.cpp
+  CustomerTable.cpp
+  CustomerSelection.cpp
+  CommissionRateTable.cpp
+  ChargeTable.cpp
+  AddressTable.cpp
+  Generating Code...
+  EGenTables.vcxproj -> C:\Users\matij\Desktop\HyperRelations\tpcE-Implementation\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\lib\Debug_Win32\EGenTables.lib

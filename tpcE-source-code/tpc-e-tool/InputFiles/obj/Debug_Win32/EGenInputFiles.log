@@ -1,57 +1,45 @@
-﻿Build started 4/2/2022 12:39:58 PM.
-     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\InputFiles\prj\VS2010\EGenInputFiles.vcxproj" on node 3 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../../inc /I../../../Utilities/inc /ZI /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\..\obj\Debug_Win32\\" /Fd"..\..\obj\Debug_Win32\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\CompanyCompetitorFile.cpp ..\..\src\CompanyFile.cpp ..\..\src\DataFileManager.cpp ..\..\src\SecurityFile.cpp
-         CompanyCompetitorFile.cpp
-         Generating Code...
-         Compiling...
-         SecurityFile.cpp
-     1>c:\users\matija\desktop\denormalized-databases\tpce-source-code\tpc-e-tool\inputfiles\src\securityfile.cpp(162): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-         DataFileManager.cpp
-         CompanyFile.cpp
-     1>c:\users\matija\desktop\denormalized-databases\tpce-source-code\tpc-e-tool\inputfiles\src\companyfile.cpp(115): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(346) : see declaration of '_snprintf'
-     1>c:\users\matija\desktop\denormalized-databases\tpce-source-code\tpc-e-tool\inputfiles\src\companyfile.cpp(119): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
-         Generating Code...
-     1>c:\users\matija\desktop\denormalized-databases\tpce-source-code\tpc-e-tool\inputfiles\src\securityfile.cpp(312): warning C4701: potentially uninitialized local variable 'eExchangeIndex' used
-       Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\lib\Debug_Win32\EGenInputFiles.lib" /NOLOGO ..\..\obj\Debug_Win32\AreaCodeDataFileRecord.obj
-         ..\..\obj\Debug_Win32\ChargeDataFileRecord.obj
-         ..\..\obj\Debug_Win32\CommissionRateDataFileRecord.obj
-         ..\..\obj\Debug_Win32\CompanyCompetitorDataFileRecord.obj
-         ..\..\obj\Debug_Win32\CompanyCompetitorFile.obj
-         ..\..\obj\Debug_Win32\CompanyDataFileRecord.obj
-         ..\..\obj\Debug_Win32\CompanyFile.obj
-         ..\..\obj\Debug_Win32\CompanySPRateDataFileRecord.obj
-         ..\..\obj\Debug_Win32\DataFileManager.obj
-         ..\..\obj\Debug_Win32\ExchangeDataFileRecord.obj
-         ..\..\obj\Debug_Win32\FemaleFirstNameDataFileRecord.obj
-         ..\..\obj\Debug_Win32\IndustryDataFileRecord.obj
-         ..\..\obj\Debug_Win32\LastNameDataFileRecord.obj
-         ..\..\obj\Debug_Win32\MaleFirstNameDataFileRecord.obj
-         ..\..\obj\Debug_Win32\NewsDataFileRecord.obj
-         ..\..\obj\Debug_Win32\NonTaxableAccountNameDataFileRecord.obj
-         ..\..\obj\Debug_Win32\SectorDataFileRecord.obj
-         ..\..\obj\Debug_Win32\SecurityDataFileRecord.obj
-         ..\..\obj\Debug_Win32\SecurityFile.obj
-         ..\..\obj\Debug_Win32\StatusTypeDataFileRecord.obj
-         ..\..\obj\Debug_Win32\StreamSplitter.obj
-         ..\..\obj\Debug_Win32\StreetNameDataFileRecord.obj
-         ..\..\obj\Debug_Win32\StreetSuffixDataFileRecord.obj
-         ..\..\obj\Debug_Win32\StringSplitter.obj
-         ..\..\obj\Debug_Win32\TaxableAccountNameDataFileRecord.obj
-         ..\..\obj\Debug_Win32\TaxRateCountryDataFileRecord.obj
-         ..\..\obj\Debug_Win32\TaxRateFile.obj
-         ..\..\obj\Debug_Win32\TaxRateDivisionDataFileRecord.obj
-         ..\..\obj\Debug_Win32\TextFileSplitter.obj
-         ..\..\obj\Debug_Win32\TradeTypeDataFileRecord.obj
-         ..\..\obj\Debug_Win32\Utilities.obj
-         ..\..\obj\Debug_Win32\ZipCodeDataFileRecord.obj
-         EGenInputFiles.vcxproj -> C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\InputFiles\prj\VS2010\..\..\lib\Debug_Win32\EGenInputFiles.lib
-     1>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\InputFiles\prj\VS2010\EGenInputFiles.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:24.01
+﻿  ZipCodeDataFileRecord.cpp
+  Utilities.cpp
+c:\users\matij\desktop\hyperrelations\tpce-implementation\tpce-source-code\tpc-e-tool\inputfiles\src\utilities.cpp(46): warning C4996: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::copy': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+          c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring(1798) : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::copy'
+  TradeTypeDataFileRecord.cpp
+  TextFileSplitter.cpp
+  TaxRateDivisionDataFileRecord.cpp
+  TaxRateFile.cpp
+  TaxRateCountryDataFileRecord.cpp
+  TaxableAccountNameDataFileRecord.cpp
+  StringSplitter.cpp
+  StreetSuffixDataFileRecord.cpp
+  StreetNameDataFileRecord.cpp
+  StreamSplitter.cpp
+  StatusTypeDataFileRecord.cpp
+  SecurityFile.cpp
+c:\users\matij\desktop\hyperrelations\tpce-implementation\tpce-source-code\tpc-e-tool\inputfiles\src\securityfile.cpp(162): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+  SecurityDataFileRecord.cpp
+  SectorDataFileRecord.cpp
+  NonTaxableAccountNameDataFileRecord.cpp
+  NewsDataFileRecord.cpp
+  MaleFirstNameDataFileRecord.cpp
+  LastNameDataFileRecord.cpp
+  Generating Code...
+c:\users\matij\desktop\hyperrelations\tpce-implementation\tpce-source-code\tpc-e-tool\inputfiles\src\securityfile.cpp(312): warning C4701: potentially uninitialized local variable 'eExchangeIndex' used
+  Compiling...
+  IndustryDataFileRecord.cpp
+  FemaleFirstNameDataFileRecord.cpp
+  ExchangeDataFileRecord.cpp
+  DataFileManager.cpp
+  CompanySPRateDataFileRecord.cpp
+  CompanyFile.cpp
+c:\users\matij\desktop\hyperrelations\tpce-implementation\tpce-source-code\tpc-e-tool\inputfiles\src\companyfile.cpp(115): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(346) : see declaration of '_snprintf'
+c:\users\matij\desktop\hyperrelations\tpce-implementation\tpce-source-code\tpc-e-tool\inputfiles\src\companyfile.cpp(119): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+  CompanyDataFileRecord.cpp
+  CompanyCompetitorFile.cpp
+  CompanyCompetitorDataFileRecord.cpp
+  CommissionRateDataFileRecord.cpp
+  ChargeDataFileRecord.cpp
+  AreaCodeDataFileRecord.cpp
+  Generating Code...
+  EGenInputFiles.vcxproj -> C:\Users\matij\Desktop\HyperRelations\tpcE-Implementation\tpcE-source-code\tpc-e-tool\InputFiles\prj\VS2010\..\..\lib\Debug_Win32\EGenInputFiles.lib

@@ -1,19 +1,5 @@
-﻿Build started 4/2/2022 12:39:52 PM.
-     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLogger.vcxproj" on node 3 (Build target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLoader.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_DEPRECATE /D _BIND_TO_CURRENT_VCLIBS_VERSION /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\..\obj\Debug_Win32\\" /Fd"..\..\lib\Debug_Win32\EGenLogger.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\BaseLogger.cpp ..\..\src\EGenLogFormatterTab.cpp
-         BaseLogger.cpp
-         Generating Code...
-         Compiling...
-         EGenLogFormatterTab.cpp
-         Generating Code...
-       Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\..\lib\Debug_Win32\EGenLogger.lib" /NOLOGO ..\..\obj\Debug_Win32\BaseLogger.obj
-         ..\..\obj\Debug_Win32\EGenLogFormatterTab.obj
-         EGenLogger.vcxproj -> C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\lib\Debug_Win32\EGenLogger.lib
-     1>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLogger.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:25.62
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenNullLoader.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  EGenLogFormatterTab.cpp
+  BaseLogger.cpp
+  Generating Code...
+  EGenLogger.vcxproj -> C:\Users\matij\Desktop\HyperRelations\tpcE-Implementation\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\lib\Debug_Win32\EGenLogger.lib

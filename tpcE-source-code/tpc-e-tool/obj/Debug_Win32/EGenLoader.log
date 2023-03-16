@@ -1,29 +1,4 @@
-﻿Build started 4/13/2022 2:50:10 PM.
-     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLoader.vcxproj" on node 2 (Build target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLoader.vcxproj" (1) is building "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenFlatFileLoad.vcxproj" (4:3) on node 1 (GetResolvedLinkLibs target(s)).
-     4>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLoader.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-     4>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenFlatFileLoad.vcxproj" (GetResolvedLinkLibs target(s)).
-     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLoader.vcxproj" (1) is building "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLogger.vcxproj" (9:3) on node 1 (GetResolvedLinkLibs target(s)).
-     9>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLoader.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-     9>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLogger.vcxproj" (GetResolvedLinkLibs target(s)).
-     1>Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLoader.vcxproj" (1) is building "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenMSSQLLoader.vcxproj" (5:3) on node 3 (GetResolvedLinkLibs target(s)).
-     5>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLoader.vcxproj, EGenLogger.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-     5>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenMSSQLLoader.vcxproj" (GetResolvedLinkLibs target(s)).
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\bin\Debug_Win32\EGenLoader.exe" /INCREMENTAL /NOLOGO Odbcbcp.lib odbc32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\bin\Debug_Win32\EGenLoader.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"..\..\bin\Debug_Win32\EGenLoader.lib" /MACHINE:X86 /SAFESEH ..\..\obj\Debug_Win32\EGenLoader.obj
-         "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\Utilities\lib\Debug_Win32\EGenUtilities.lib"
-         "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\InputFiles\lib\Debug_Win32\EGenInputFiles.lib"
-         "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\lib\Debug_Win32\EGenDriverMEELib.lib"
-         "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\lib\Debug_Win32\EGenFlatFileLoader.lib"
-         "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\lib\Debug_Win32\EGenTables.lib"
-         "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\lib\Debug_Win32\EGenGenerateAndLoad.lib"
-         "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\lib\Debug_Win32\EGenLogger.lib"
-         "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\lib\Debug_Win32\EGenMSSQLLoader.lib"
-     1>EGenLoader.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-         EGenLoader.vcxproj -> C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\bin\Debug_Win32\EGenLoader.exe
-     1>Done Building Project "C:\Users\Matija\Desktop\Denormalized-Databases\tpcE-source-code\tpc-e-tool\prj\VS2010\EGenLoader.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:05.64
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenDriverMEELib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  EGenLoader.cpp
+EGenLoader.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  EGenLoader.vcxproj -> C:\Users\matij\Desktop\HyperRelations\tpcE-Implementation\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\bin\Debug_Win32\EGenLoader.exe
