@@ -35,11 +35,11 @@
  * - Doug Johnson
  */
 
-/*
-*   This file contains a class that acts as a client to the table
-*   generation classes (EGenTables) and to the loader classes (EGenBaseLoader).
-*   It provides routines for generating and loading the table data or its subset.
-*/
+ /*
+ *   This file contains a class that acts as a client to the table
+ *   generation classes (EGenTables) and to the loader classes (EGenBaseLoader).
+ *   It provides routines for generating and loading the table data or its subset.
+ */
 
 #include "../inc/EGenGenerateAndLoad_stdafx.h"
 #include "../inc/DriverParamSettings.h"
@@ -77,34 +77,34 @@ using namespace TPCE;
 *  RETURNS:
 *           not applicable.
 */
-CGenerateAndLoad::CGenerateAndLoad(const DataFileManager&       dfm,
-                                  TIdent                        iCustomerCount,
-                                  TIdent                        iStartFromCustomer,
-                                  TIdent                        iTotalCustomers,
-                                  UINT                          iLoadUnitSize,
-                                  UINT                          iScaleFactor,
-                                  UINT                          iDaysOfInitialTrades,
-                                  CBaseLoaderFactory*           pLoaderFactory,
-                                  CBaseLogger*                  pLogger,
-                                  CGenerateAndLoadBaseOutput*   pOutput,
-                                  char*                         szInDir,
-                                  bool                          bCacheEnabled
-                                 )
-: m_dfm(dfm)
-, m_iStartFromCustomer(iStartFromCustomer)
-, m_iCustomerCount(iCustomerCount)
-, m_iTotalCustomers(iTotalCustomers)
-, m_iLoadUnitSize(iLoadUnitSize)
-, m_iScaleFactor(iScaleFactor)
-, m_iHoursOfInitialTrades(iDaysOfInitialTrades*HoursPerWorkDay)
-, m_pLoaderFactory(pLoaderFactory)
-, m_pOutput(pOutput)
-, m_pLogger(pLogger)
-, m_LoaderSettings(iTotalCustomers, iTotalCustomers, iStartFromCustomer, iCustomerCount, iScaleFactor, iDaysOfInitialTrades )
-, m_bCacheEnabled(bCacheEnabled)
+CGenerateAndLoad::CGenerateAndLoad(const DataFileManager& dfm,
+    TIdent                        iCustomerCount,
+    TIdent                        iStartFromCustomer,
+    TIdent                        iTotalCustomers,
+    UINT                          iLoadUnitSize,
+    UINT                          iScaleFactor,
+    UINT                          iDaysOfInitialTrades,
+    CBaseLoaderFactory* pLoaderFactory,
+    CBaseLogger* pLogger,
+    CGenerateAndLoadBaseOutput* pOutput,
+    char* szInDir,
+    bool                          bCacheEnabled
+)
+    : m_dfm(dfm)
+    , m_iStartFromCustomer(iStartFromCustomer)
+    , m_iCustomerCount(iCustomerCount)
+    , m_iTotalCustomers(iTotalCustomers)
+    , m_iLoadUnitSize(iLoadUnitSize)
+    , m_iScaleFactor(iScaleFactor)
+    , m_iHoursOfInitialTrades(iDaysOfInitialTrades* HoursPerWorkDay)
+    , m_pLoaderFactory(pLoaderFactory)
+    , m_pOutput(pOutput)
+    , m_pLogger(pLogger)
+    , m_LoaderSettings(iTotalCustomers, iTotalCustomers, iStartFromCustomer, iCustomerCount, iScaleFactor, iDaysOfInitialTrades)
+    , m_bCacheEnabled(bCacheEnabled)
 {
     // Copy input flat file directory needed for tables loaded from flat files.
-    strncpy( m_szInDir, szInDir, sizeof(m_szInDir));
+    strncpy(m_szInDir, szInDir, sizeof(m_szInDir));
 
     // Log Parameters
     m_pLogger->SendToLogger(m_LoaderSettings);
@@ -123,11 +123,11 @@ void CGenerateAndLoad::GenerateAndLoadAddress()
 {
     bool                        bRet;
     CAddressTable               Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer,
-                                      // do not generate exchange and company addresses
-                                      // if the starting customer is not 1
-                                      m_iStartFromCustomer != iDefaultStartFromCustomer);
-    CBaseLoader<ADDRESS_ROW>*   pLoad = m_pLoaderFactory->CreateAddressLoader();
-    INT64                       iCnt=0;
+        // do not generate exchange and company addresses
+        // if the starting customer is not 1
+        m_iStartFromCustomer != iDefaultStartFromCustomer);
+    CBaseLoader<ADDRESS_ROW>* pLoad = m_pLoaderFactory->CreateAddressLoader();
+    INT64                       iCnt = 0;
 
     m_pOutput->OutputStart("Generating ADDRESS table...");
 
@@ -166,13 +166,13 @@ void CGenerateAndLoad::GenerateAndLoadAddress()
 void CGenerateAndLoad::GenerateAndLoadCharge()
 {
     CChargeTable                       Table(m_dfm.ChargeDataFile());
-    CBaseLoader<CHARGE_ROW>*   pLoad = m_pLoaderFactory->CreateChargeLoader();
+    CBaseLoader<CHARGE_ROW>* pLoad = m_pLoaderFactory->CreateChargeLoader();
 
     m_pOutput->OutputStart("Generating CHARGE table...");
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -202,7 +202,7 @@ void CGenerateAndLoad::GenerateAndLoadCommissionRate()
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -227,7 +227,7 @@ void CGenerateAndLoad::GenerateAndLoadCompany()
 {
     bool                            bRet;
     CCompanyTable                   Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<COMPANY_ROW>*       pLoad = m_pLoaderFactory->CreateCompanyLoader();
+    CBaseLoader<COMPANY_ROW>* pLoad = m_pLoaderFactory->CreateCompanyLoader();
 
     m_pOutput->OutputStart("Generating COMPANY table...");
 
@@ -263,7 +263,7 @@ void CGenerateAndLoad::GenerateAndLoadCompanyCompetitor()
 {
     bool                                    bRet;
     CCompanyCompetitorTable                 Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<COMPANY_COMPETITOR_ROW>*    pLoad = m_pLoaderFactory->CreateCompanyCompetitorLoader();
+    CBaseLoader<COMPANY_COMPETITOR_ROW>* pLoad = m_pLoaderFactory->CreateCompanyCompetitorLoader();
 
     m_pOutput->OutputStart("Generating COMPANY_COMPETITOR table...");
 
@@ -299,8 +299,8 @@ void CGenerateAndLoad::GenerateAndLoadCustomer()
 {
     bool                        bRet;
     CCustomerTable              Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<CUSTOMER_ROW>*  pLoad = m_pLoaderFactory->CreateCustomerLoader();
-    INT64                       iCnt=0;
+    CBaseLoader<CUSTOMER_ROW>* pLoad = m_pLoaderFactory->CreateCustomerLoader();
+    INT64                       iCnt = 0;
 
     m_pOutput->OutputStart("Generating CUSTOMER table...");
 
@@ -339,19 +339,17 @@ void CGenerateAndLoad::GenerateAndLoadCustomer()
 */
 void CGenerateAndLoad::GenerateAndLoadCustomerAccountAndAccountPermission()
 {
-// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
-	bool                                    bRet;
+    bool                                    bRet;
     CCustomerAccountsAndPermissionsTable    Table(m_dfm, m_iLoadUnitSize, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<CUSTOMER_ACCOUNT_ROW>*      pCALoad = m_pLoaderFactory->CreateCustomerAccountLoader();
-//    CBaseLoader<ACCOUNT_PERMISSION_ROW>*    pAPLoad = m_pLoaderFactory->CreateAccountPermissionLoader();
-    INT64                                   iCnt=0;
+    CBaseLoader<CUSTOMER_ACCOUNT_ROW>* pCALoad = m_pLoaderFactory->CreateCustomerAccountLoader();
+    CBaseLoader<ACCOUNT_PERMISSION_ROW>* pAPLoad = m_pLoaderFactory->CreateAccountPermissionLoader();
+    INT64                                   iCnt = 0;
     UINT                                    i;
 
-	m_pOutput->OutputStart("Generating CUSTOMER_ACCOUNT table ...");
-//	m_pOutput->OutputStart("Generating CUSTOMER_ACCOUNT table and ACCOUNT_PERMISSION table...");
+    m_pOutput->OutputStart("Generating CUSTOMER_ACCOUNT table and ACCOUNT_PERMISSION table...");
 
     pCALoad->Init();
-//    pAPLoad->Init();
+    pAPLoad->Init();
 
     do
     {
@@ -359,10 +357,12 @@ void CGenerateAndLoad::GenerateAndLoadCustomerAccountAndAccountPermission()
 
         pCALoad->WriteNextRecord(Table.GetCARow());
 
-//        for(i=0; i<Table.GetCAPermsCount(); ++i)
-//        {
-//            pAPLoad->WriteNextRecord(Table.GetAPRow(i));
-//        }
+        for (i = 0; i < Table.GetCAPermsCount(); ++i)
+        {
+
+            pAPLoad->WriteNextRecord(Table.GetAPRow(i));
+
+        }
 
         if (++iCnt % 10000 == 0)
         {
@@ -373,16 +373,16 @@ void CGenerateAndLoad::GenerateAndLoadCustomerAccountAndAccountPermission()
         if (iCnt % 10000 == 0)
         {
             pCALoad->Commit();
-//            pAPLoad->Commit();
+            pAPLoad->Commit();
         }
 
     } while (bRet);
     pCALoad->FinishLoad();  //commit
-//    pAPLoad->FinishLoad();  //commit
+    pAPLoad->FinishLoad();  //commit
     delete pCALoad;
-//    delete pAPLoad;
+    delete pAPLoad;
 
-    m_pOutput->OutputComplete(" loaded.");
+    m_pOutput->OutputComplete("loaded.");
     m_pOutput->OutputNewline();
     m_pOutput->OutputNewline();
 }
@@ -400,8 +400,8 @@ void CGenerateAndLoad::GenerateAndLoadCustomerTaxrate()
 {
     bool                                bRet;
     CCustomerTaxRateTable              Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<CUSTOMER_TAXRATE_ROW>*  pLoad = m_pLoaderFactory->CreateCustomerTaxrateLoader();
-    INT64                               iCnt=0;
+    CBaseLoader<CUSTOMER_TAXRATE_ROW>* pLoad = m_pLoaderFactory->CreateCustomerTaxrateLoader();
+    INT64                               iCnt = 0;
     UINT                                 i;
 
     m_pOutput->OutputStart("Generating CUSTOMER_TAX_RATE table...");
@@ -412,7 +412,7 @@ void CGenerateAndLoad::GenerateAndLoadCustomerTaxrate()
     {
         bRet = Table.GenerateNextRecord();
 
-        for (i=0; i<Table.GetTaxRatesCount(); ++i)
+        for (i = 0; i < Table.GetTaxRatesCount(); ++i)
         {
             pLoad->WriteNextRecord(Table.GetRowByIndex(i));
 
@@ -445,8 +445,8 @@ void CGenerateAndLoad::GenerateAndLoadDailyMarket()
 {
     bool                            bRet;
     CDailyMarketTable               Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<DAILY_MARKET_ROW>*  pLoad = m_pLoaderFactory->CreateDailyMarketLoader();
-    INT64                           iCnt=0;
+    CBaseLoader<DAILY_MARKET_ROW>* pLoad = m_pLoaderFactory->CreateDailyMarketLoader();
+    INT64                           iCnt = 0;
 
     m_pOutput->OutputStart("Generating DAILY_MARKET table...");
 
@@ -491,13 +491,13 @@ void CGenerateAndLoad::GenerateAndLoadDailyMarket()
 void CGenerateAndLoad::GenerateAndLoadExchange()
 {
     CExchangeTable                         Table(m_dfm.ExchangeDataFile(), m_iCustomerCount);
-    CBaseLoader<EXCHANGE_ROW>*   pLoad = m_pLoaderFactory->CreateExchangeLoader();
+    CBaseLoader<EXCHANGE_ROW>* pLoad = m_pLoaderFactory->CreateExchangeLoader();
 
     m_pOutput->OutputStart("Generating EXCHANGE table...");
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -522,8 +522,8 @@ void CGenerateAndLoad::GenerateAndLoadFinancial()
 {
     bool                            bRet;
     CFinancialTable                 Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<FINANCIAL_ROW>*     pLoad = m_pLoaderFactory->CreateFinancialLoader();
-    INT64                           iCnt=0;
+    CBaseLoader<FINANCIAL_ROW>* pLoad = m_pLoaderFactory->CreateFinancialLoader();
+    INT64                           iCnt = 0;
 
     m_pOutput->OutputStart("Generating FINANCIAL table...");
 
@@ -567,129 +567,128 @@ void CGenerateAndLoad::GenerateAndLoadFinancial()
 */
 void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 {
-// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
-	bool                                bRet;
-    CTradeGen*                          pTradeGen;
+    bool                                bRet;
+    CTradeGen* pTradeGen;
 
-//    CBaseLoader<HOLDING_ROW>*           pHoldingsLoad;
-//    CBaseLoader<HOLDING_HISTORY_ROW>*   pHoldingHistoryLoad;
-    CBaseLoader<HOLDING_SUMMARY_ROW>*   pHoldingSummaryLoad;
-//    CBaseLoader<TRADE_ROW>*             pTradesLoad;
+    CBaseLoader<HOLDING_ROW>* pHoldingsLoad;
+    CBaseLoader<HOLDING_HISTORY_ROW>* pHoldingHistoryLoad;
+    CBaseLoader<HOLDING_SUMMARY_ROW>* pHoldingSummaryLoad;
+    CBaseLoader<TRADE_ROW>* pTradesLoad;
     // Not loading TRADE_REQUEST table (it'll be quickly populated during a run)
     //CBaseLoader<TRADE_REQUEST_ROW>*       pRequestsLoad;
-//    CBaseLoader<SETTLEMENT_ROW>*        pSettlementLoad;
-//    CBaseLoader<TRADE_HISTORY_ROW>*     pHistoryLoad;
-//    CBaseLoader<CASH_TRANSACTION_ROW>*  pCashLoad;
-//    CBaseLoader<BROKER_ROW>*            pBrokerLoad;
-    int                                 iCnt=0;
+    CBaseLoader<SETTLEMENT_ROW>* pSettlementLoad;
+    CBaseLoader<TRADE_HISTORY_ROW>* pHistoryLoad;
+    CBaseLoader<CASH_TRANSACTION_ROW>* pCashLoad;
+    CBaseLoader<BROKER_ROW>* pBrokerLoad;
+    int                                 iCnt = 0;
     int                                 i;
     int                                 iCurrentLoadUnit = 1;
     char                                szCurrentLoadUnit[11];
 
-//    pHoldingsLoad = m_pLoaderFactory->CreateHoldingLoader();
-//    pHoldingHistoryLoad = m_pLoaderFactory->CreateHoldingHistoryLoader();
+    pHoldingsLoad = m_pLoaderFactory->CreateHoldingLoader();
+    pHoldingHistoryLoad = m_pLoaderFactory->CreateHoldingHistoryLoader();
     pHoldingSummaryLoad = m_pLoaderFactory->CreateHoldingSummaryLoader();
-//    pTradesLoad = m_pLoaderFactory->CreateTradeLoader();
+    pTradesLoad = m_pLoaderFactory->CreateTradeLoader();
     // Not loading TRADE_REQUEST table (it'll be quickly populated during a run)
     //pRequestsLoad = m_pLoaderFactory->CreateTradeRequestLoader();
-//    pSettlementLoad = m_pLoaderFactory->CreateSettlementLoader();
-//    pHistoryLoad = m_pLoaderFactory->CreateTradeHistoryLoader();
-//    pCashLoad = m_pLoaderFactory->CreateCashTransactionLoader();
-//    pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
+    pSettlementLoad = m_pLoaderFactory->CreateSettlementLoader();
+    pHistoryLoad = m_pLoaderFactory->CreateTradeHistoryLoader();
+    pCashLoad = m_pLoaderFactory->CreateCashTransactionLoader();
+    pBrokerLoad = m_pLoaderFactory->CreateBrokerLoader();
 
-    m_pOutput->OutputStart("Generating HOLDING_SUMMARY table...");
-//    m_pOutput->OutputStart("Generating TRADE, SETTLEMENT, TRADE HISTORY, CASH TRANSACTION, "
-//                            "HOLDING_HISTORY, HOLDING_SUMMARY, HOLDING, and BROKER tables...");
+    m_pOutput->OutputStart("Generating TRADE, SETTLEMENT, TRADE HISTORY, CASH TRANSACTION, "
+        "HOLDING_HISTORY, HOLDING_SUMMARY, HOLDING, and BROKER tables...");
 
     pTradeGen = new CTradeGen(m_dfm, m_iCustomerCount, m_iStartFromCustomer,
-                              m_iTotalCustomers, m_iLoadUnitSize,
-                              m_iScaleFactor, m_iHoursOfInitialTrades,
-                              m_bCacheEnabled
-                             );
+        m_iTotalCustomers, m_iLoadUnitSize,
+        m_iScaleFactor, m_iHoursOfInitialTrades,
+        m_bCacheEnabled
+    );
 
-	// Generate and load one load unit at a time.
+    // Generate and load one load unit at a time.
     //
     do
     {
-//       pTradesLoad->Init();
-//       pSettlementLoad->Init();
-//       pHistoryLoad->Init();
-//       pCashLoad->Init();
-//       pBrokerLoad->Init();
-//       pHoldingHistoryLoad->Init();
-//       pHoldingsLoad->Init();
+        pTradesLoad->Init();
+        pSettlementLoad->Init();
+        pHistoryLoad->Init();
+        pCashLoad->Init();
+        pBrokerLoad->Init();
+        pHoldingHistoryLoad->Init();
+        pHoldingsLoad->Init();
         pHoldingSummaryLoad->Init();
         // Not loading TRADE_REQUEST table
         //pRequestsLoad->Init();
 
         // Generate and load trades for this load unit.
         //
-       do
-       {
-           bRet = pTradeGen->GenerateNextTrade();
-		   /*
-           pTradesLoad->WriteNextRecord(pTradeGen->GetTradeRow());
+        do
+        {
+            bRet = pTradeGen->GenerateNextTrade();
 
-           for ( i=0; i<pTradeGen->GetTradeHistoryRowCount(); ++i)
-           {
-               pHistoryLoad->WriteNextRecord(pTradeGen->GetTradeHistoryRow(i));
-           }
+            pTradesLoad->WriteNextRecord(pTradeGen->GetTradeRow());
 
-          if ( pTradeGen->GetSettlementRowCount() )
-           {
-               pSettlementLoad->WriteNextRecord(pTradeGen->GetSettlementRow());
-           }
+            for (i = 0; i < pTradeGen->GetTradeHistoryRowCount(); ++i)
+            {
+                pHistoryLoad->WriteNextRecord(pTradeGen->GetTradeHistoryRow(i));
+            }
 
-           if ( pTradeGen->GetCashTransactionRowCount() )
-           {
-               pCashLoad->WriteNextRecord(pTradeGen->GetCashTransactionRow());
-           }
-	
-           for ( i=0; i<pTradeGen->GetHoldingHistoryRowCount(); ++i)
-           {
-               pHoldingHistoryLoad->WriteNextRecord(pTradeGen->GetHoldingHistoryRow(i));
-           }
-		   */
-           /*if ((pTradeGen->GetTradeRow())->m_iTradeStatus == eCompleted) // Not loading TRADE_REQUEST table
-           {
-           pRequestsLoad->WriteNextRecord(pTradeGen->GetTradeRequestRow());
-           }*/
+            if (pTradeGen->GetSettlementRowCount())
+            {
+                pSettlementLoad->WriteNextRecord(pTradeGen->GetSettlementRow());
+            }
 
-           if (++iCnt % 10000 == 0)
-           {
-               m_pOutput->OutputProgress("."); //output progress
-           }
-/*
-           // Commit rows every so often
-           if (iCnt % 10000 == 0)
-           {
-               pTradesLoad->Commit();          //commit
-               pSettlementLoad->Commit();      //commit
-               pHistoryLoad->Commit();         //commit
-               pCashLoad->Commit();
-               pHoldingHistoryLoad->Commit();  //commit
-               // Not loading TRADE_REQUEST table
-               //pRequestsLoad->Commit();      //commit
-           }
-*/
-       } while (bRet);
+            if (pTradeGen->GetCashTransactionRowCount())
+            {
+                pCashLoad->WriteNextRecord(pTradeGen->GetCashTransactionRow());
+            }
+
+            for (i = 0; i < pTradeGen->GetHoldingHistoryRowCount(); ++i)
+            {
+                pHoldingHistoryLoad->WriteNextRecord(pTradeGen->GetHoldingHistoryRow(i));
+            }
+
+            /*if ((pTradeGen->GetTradeRow())->m_iTradeStatus == eCompleted) // Not loading TRADE_REQUEST table
+            {
+            pRequestsLoad->WriteNextRecord(pTradeGen->GetTradeRequestRow());
+            }*/
+
+            if (++iCnt % 10000 == 0)
+            {
+                m_pOutput->OutputProgress("."); //output progress
+            }
+
+            // Commit rows every so often
+            if (iCnt % 10000 == 0)
+            {
+                pTradesLoad->Commit();          //commit
+                pSettlementLoad->Commit();      //commit
+                pHistoryLoad->Commit();         //commit
+                pCashLoad->Commit();
+                pHoldingHistoryLoad->Commit();  //commit
+                // Not loading TRADE_REQUEST table
+                //pRequestsLoad->Commit();      //commit
+            }
+
+
+        } while (bRet);
 
         // After trades generate and load BROKER table.
         //
-/*       do
-       {
-           bRet = pTradeGen->GenerateNextBrokerRecord();
+        do
+        {
+            bRet = pTradeGen->GenerateNextBrokerRecord();
 
-           pBrokerLoad->WriteNextRecord(pTradeGen->GetBrokerRow());
+            pBrokerLoad->WriteNextRecord(pTradeGen->GetBrokerRow());
 
-           // Commit rows every so often
-           if (++iCnt % 10000 == 0)
-           {
-               pBrokerLoad->Commit();      //commit
-           }
-       } while (bRet);
-*/
-       m_pOutput->OutputProgress(".hs_b.");
+            // Commit rows every so often
+            if (++iCnt % 10000 == 0)
+            {
+                pBrokerLoad->Commit();      //commit
+            }
+        } while (bRet);
+
+        m_pOutput->OutputProgress("t");
 
         //  Now generate and load HOLDING_SUMMARY rows for this load unit.
         //
@@ -711,35 +710,33 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
             }
         } while (bRet);
 
-		m_pOutput->OutputProgress(".hs_e.");
-
         //  Now generate and load holdings for this load unit.
         //
-/*       do
-       {
-           bRet = pTradeGen->GenerateNextHolding();
+        do
+        {
+            bRet = pTradeGen->GenerateNextHolding();
 
-           //pHoldingsLoad->WriteNextRecord(pTradeGen->GetHoldingRow());
+            pHoldingsLoad->WriteNextRecord(pTradeGen->GetHoldingRow());
 
-           if (++iCnt % 10000 == 0)
-           {
-               m_pOutput->OutputProgress("."); //output progress
-           }
+            if (++iCnt % 10000 == 0)
+            {
+                m_pOutput->OutputProgress("."); //output progress
+            }
 
-           // Commit rows every so often
-           if (iCnt % 10000 == 0)
-           {
-               pHoldingsLoad->Commit();        //commit
-           }
-       } while (bRet);
-*/
-//       pTradesLoad->FinishLoad();          //commit
-//       pSettlementLoad->FinishLoad();      //commit
-//       pHistoryLoad->FinishLoad();         //commit
-//       pCashLoad->FinishLoad();            //commit
-//       pBrokerLoad->FinishLoad();          //commit
-//       pHoldingHistoryLoad->FinishLoad();  //commit
-//       pHoldingsLoad->FinishLoad();        //commit
+            // Commit rows every so often
+            if (iCnt % 10000 == 0)
+            {
+                pHoldingsLoad->Commit();        //commit
+            }
+        } while (bRet);
+
+        pTradesLoad->FinishLoad();          //commit
+        pSettlementLoad->FinishLoad();      //commit
+        pHistoryLoad->FinishLoad();         //commit
+        pCashLoad->FinishLoad();            //commit
+        pBrokerLoad->FinishLoad();          //commit
+        pHoldingHistoryLoad->FinishLoad();  //commit
+        pHoldingsLoad->FinishLoad();        //commit
         pHoldingSummaryLoad->FinishLoad();  //commit
         // Not loading TRADE_REQUEST table
         //pRequestsLoad->FinishLoad();      //commit
@@ -751,20 +748,20 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 
     } while (pTradeGen->InitNextLoadUnit());
 
-//    delete pHoldingsLoad;
-//    delete pHoldingHistoryLoad;
+    delete pHoldingsLoad;
+    delete pHoldingHistoryLoad;
     delete pHoldingSummaryLoad;
-//    delete pTradesLoad;
+    delete pTradesLoad;
     // Not loading TRADE_REQUEST table
     //delete pRequestsLoad;
-//    delete pSettlementLoad;
-//    delete pHistoryLoad;
-//    delete pCashLoad;
-//    delete pBrokerLoad;
+    delete pSettlementLoad;
+    delete pHistoryLoad;
+    delete pCashLoad;
+    delete pBrokerLoad;
 
     delete pTradeGen;
 
-    m_pOutput->OutputComplete(" .loaded.");
+    m_pOutput->OutputComplete(".loaded.");
     m_pOutput->OutputNewline();
     m_pOutput->OutputNewline();
 }
@@ -781,13 +778,13 @@ void CGenerateAndLoad::GenerateAndLoadHoldingAndTrade()
 void CGenerateAndLoad::GenerateAndLoadIndustry()
 {
     CIndustryTable                       Table(m_dfm.IndustryDataFile());
-    CBaseLoader<INDUSTRY_ROW>*   pLoad = m_pLoaderFactory->CreateIndustryLoader();
+    CBaseLoader<INDUSTRY_ROW>* pLoad = m_pLoaderFactory->CreateIndustryLoader();
 
     m_pOutput->OutputStart("Generating INDUSTRY table...");
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -812,8 +809,8 @@ void CGenerateAndLoad::GenerateAndLoadLastTrade()
 {
     bool    bRet;
     CLastTradeTable                 Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer
-                                          , m_iHoursOfInitialTrades);
-    CBaseLoader<LAST_TRADE_ROW>*    pLoad = m_pLoaderFactory->CreateLastTradeLoader();
+        , m_iHoursOfInitialTrades);
+    CBaseLoader<LAST_TRADE_ROW>* pLoad = m_pLoaderFactory->CreateLastTradeLoader();
 
     m_pOutput->OutputStart("Generating LAST TRADE table...");
 
@@ -849,13 +846,13 @@ void CGenerateAndLoad::GenerateAndLoadNewsItemAndNewsXRef()
 {
     bool                            bRet;
     // allocated on the heap because contains 100KB item
-    CNewsItemAndXRefTable*          pTable = new CNewsItemAndXRefTable( m_dfm,
-                                                                        m_iCustomerCount,
-                                                                        m_iStartFromCustomer,
-                                                                        m_iHoursOfInitialTrades);
-    CBaseLoader<NEWS_ITEM_ROW>*     pNewsItemLoad = m_pLoaderFactory->CreateNewsItemLoader();
-    CBaseLoader<NEWS_XREF_ROW>*     pNewsXRefLoad = m_pLoaderFactory->CreateNewsXRefLoader();
-    INT64                           iCnt=0;
+    CNewsItemAndXRefTable* pTable = new CNewsItemAndXRefTable(m_dfm,
+        m_iCustomerCount,
+        m_iStartFromCustomer,
+        m_iHoursOfInitialTrades);
+    CBaseLoader<NEWS_ITEM_ROW>* pNewsItemLoad = m_pLoaderFactory->CreateNewsItemLoader();
+    CBaseLoader<NEWS_XREF_ROW>* pNewsXRefLoad = m_pLoaderFactory->CreateNewsXRefLoader();
+    INT64                           iCnt = 0;
 
     m_pOutput->OutputStart("Generating NEWS_ITEM and NEWS_XREF table...");
 
@@ -902,13 +899,13 @@ void CGenerateAndLoad::GenerateAndLoadNewsItemAndNewsXRef()
 void CGenerateAndLoad::GenerateAndLoadSector()
 {
     CSectorTable                       Table(m_dfm.SectorDataFile());
-    CBaseLoader<SECTOR_ROW>*   pLoad = m_pLoaderFactory->CreateSectorLoader();
+    CBaseLoader<SECTOR_ROW>* pLoad = m_pLoaderFactory->CreateSectorLoader();
 
     m_pOutput->OutputStart("Generating SECTOR table...");
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -933,8 +930,8 @@ void CGenerateAndLoad::GenerateAndLoadSecurity()
 {
     bool                            bRet;
     CSecurityTable                  Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<SECURITY_ROW>*      pLoad = m_pLoaderFactory->CreateSecurityLoader();
-    INT64                           iCnt=0;
+    CBaseLoader<SECURITY_ROW>* pLoad = m_pLoaderFactory->CreateSecurityLoader();
+    INT64                           iCnt = 0;
 
     m_pOutput->OutputStart("Generating SECURITY table...");
 
@@ -974,13 +971,13 @@ void CGenerateAndLoad::GenerateAndLoadSecurity()
 void CGenerateAndLoad::GenerateAndLoadStatusType()
 {
     CStatusTypeTable                       Table(m_dfm.StatusTypeDataFile());
-    CBaseLoader<STATUS_TYPE_ROW>*   pLoad = m_pLoaderFactory->CreateStatusTypeLoader();
+    CBaseLoader<STATUS_TYPE_ROW>* pLoad = m_pLoaderFactory->CreateStatusTypeLoader();
 
     m_pOutput->OutputStart("Generating STATUS_TYPE table...");
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -1012,7 +1009,7 @@ void CGenerateAndLoad::GenerateAndLoadTaxrate()
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -1036,13 +1033,13 @@ void CGenerateAndLoad::GenerateAndLoadTaxrate()
 void CGenerateAndLoad::GenerateAndLoadTradeType()
 {
     CTradeTypeTable                       Table(m_dfm.TradeTypeDataFile());
-    CBaseLoader<TRADE_TYPE_ROW>*   pLoad = m_pLoaderFactory->CreateTradeTypeLoader();
+    CBaseLoader<TRADE_TYPE_ROW>* pLoad = m_pLoaderFactory->CreateTradeTypeLoader();
 
     m_pOutput->OutputStart("Generating TRADE_TYPE table...");
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -1067,9 +1064,9 @@ void CGenerateAndLoad::GenerateAndLoadWatchListAndWatchItem()
 {
     bool                            bRet;
     CWatchListsAndItemsTable        Table(m_dfm, m_iCustomerCount, m_iStartFromCustomer);
-    CBaseLoader<WATCH_LIST_ROW>*    pWatchListsLoad = m_pLoaderFactory->CreateWatchListLoader();
-    CBaseLoader<WATCH_ITEM_ROW>*    pWatchItemsLoad = m_pLoaderFactory->CreateWatchItemLoader();
-    INT64                           iCnt=0;
+    CBaseLoader<WATCH_LIST_ROW>* pWatchListsLoad = m_pLoaderFactory->CreateWatchListLoader();
+    CBaseLoader<WATCH_ITEM_ROW>* pWatchItemsLoad = m_pLoaderFactory->CreateWatchItemLoader();
+    INT64                           iCnt = 0;
     UINT                            i;
 
     m_pOutput->OutputStart("Generating WATCH_LIST table and WATCH_ITEM table...");
@@ -1083,7 +1080,7 @@ void CGenerateAndLoad::GenerateAndLoadWatchListAndWatchItem()
 
         pWatchListsLoad->WriteNextRecord(Table.GetWLRow());
 
-        for (i=0; i<Table.GetWICount(); ++i)
+        for (i = 0; i < Table.GetWICount(); ++i)
         {
             pWatchItemsLoad->WriteNextRecord(Table.GetWIRow(i));
 
@@ -1120,13 +1117,13 @@ void CGenerateAndLoad::GenerateAndLoadWatchListAndWatchItem()
 void CGenerateAndLoad::GenerateAndLoadZipCode()
 {
     CZipCodeTable                       Table(m_dfm.ZipCodeDataFile());
-    CBaseLoader<ZIP_CODE_ROW>*   pLoad = m_pLoaderFactory->CreateZipCodeLoader();
+    CBaseLoader<ZIP_CODE_ROW>* pLoad = m_pLoaderFactory->CreateZipCodeLoader();
 
     m_pOutput->OutputStart("Generating ZIP_CODE table...");
 
     pLoad->Init();
 
-    while( Table.GenerateNextRecord() )
+    while (Table.GenerateNextRecord())
     {
         pLoad->WriteNextRecord(Table.GetRow());
     }
@@ -1151,16 +1148,15 @@ void CGenerateAndLoad::GenerateAndLoadZipCode()
 */
 void CGenerateAndLoad::GenerateAndLoadFixedTables()
 {
-// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
-//   GenerateAndLoadCharge();
-//   GenerateAndLoadCommissionRate();
-//   GenerateAndLoadExchange();
-//   GenerateAndLoadIndustry();
-//   GenerateAndLoadSector();
-//   GenerateAndLoadStatusType();
-//   GenerateAndLoadTaxrate();
-//   GenerateAndLoadTradeType();
-//   GenerateAndLoadZipCode();
+    GenerateAndLoadCharge();
+    GenerateAndLoadCommissionRate();
+    GenerateAndLoadExchange();
+    GenerateAndLoadIndustry();
+    GenerateAndLoadSector();
+    GenerateAndLoadStatusType();
+    GenerateAndLoadTaxrate();
+    GenerateAndLoadTradeType();
+    GenerateAndLoadZipCode();
 }
 
 /*
@@ -1177,25 +1173,23 @@ void CGenerateAndLoad::GenerateAndLoadFixedTables()
 */
 void CGenerateAndLoad::GenerateAndLoadScalingTables()
 {
-// Generate only CUSTOMER, CUSTOMER_ACCOUNT, LAST_TRADE, HOLDING_SUMMARY
-
-	// Customer-related tables
+    // Customer-related tables
     //
-//   GenerateAndLoadAddress();
+    GenerateAndLoadAddress();
     GenerateAndLoadCustomer();
     GenerateAndLoadCustomerAccountAndAccountPermission();
-//   GenerateAndLoadCustomerTaxrate();
-//   GenerateAndLoadWatchListAndWatchItem();
+    GenerateAndLoadCustomerTaxrate();
+    GenerateAndLoadWatchListAndWatchItem();
 
     // Now security/company related tables
     //
-//   GenerateAndLoadCompany();
-//   GenerateAndLoadCompanyCompetitor();
-//   GenerateAndLoadDailyMarket();
-//   GenerateAndLoadFinancial();
+    GenerateAndLoadCompany();
+    GenerateAndLoadCompanyCompetitor();
+    GenerateAndLoadDailyMarket();
+    GenerateAndLoadFinancial();
     GenerateAndLoadLastTrade();
-//   GenerateAndLoadNewsItemAndNewsXRef();
-//    GenerateAndLoadSecurity();
+    GenerateAndLoadNewsItemAndNewsXRef();
+    GenerateAndLoadSecurity();
 }
 
 /*
