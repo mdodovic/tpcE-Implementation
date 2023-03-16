@@ -42,19 +42,16 @@ int main()
 //		const int SCALE_FACTOR = 1000;
 //		const int DAYS_OF_INITIAL_TRADE = 300;
 
-		const int CONFIGURED_CUSTOMER_COUNT = 300000;
-		const int ACTIVE_CUSTOMER_COUNT = 300000;
+		const int CONFIGURED_CUSTOMER_COUNT = 1000;
+		const int ACTIVE_CUSTOMER_COUNT = 1000;
 		const int SCALE_FACTOR = 500;
 		const int DAYS_OF_INITIAL_TRADE = 300;
 
 		fstream tpceWorkload;
-		//printf("Pre punjenja2!\n");
-		tpceWorkload.open("D:/transactionMix/T2_130k.sql", ios::out);
-		//printf("Pre punjenja3!\n");
+		tpceWorkload.open("C:/Users/matij/Desktop/HyperRelations/transactions/T2_130k.sql", ios::out);
 
 		// Customer request generator
 		CCESUTImpl * sutImpl = new CCESUTImpl(tpceWorkload);
-		//("Pre punjenja3.5!\n");
 		CCE c(sutImpl, &logger, dfm,
 			CONFIGURED_CUSTOMER_COUNT,
 			ACTIVE_CUSTOMER_COUNT,
@@ -63,12 +60,10 @@ int main()
 			100,  // unique id
 			dcetSettings);
 
-		//printf("Pre punjenja4!\n");
 		// Market request generator (out of scope)
 		MEESUTImpl * meeSutImpl = new MEESUTImpl();
 		CMEE m(300, meeSutImpl, &logger, dfm, 2000);
 
-		//printf("Pre punjenja!\n");
 		// DataMaintenance request generator...
 		DMSUTImpl * dmSutImpl  = new DMSUTImpl(tpceWorkload);
 		CDM dm(dmSutImpl, &logger, dfm, 
@@ -78,12 +73,10 @@ int main()
 			DAYS_OF_INITIAL_TRADE, 
 			100 // unique id
 		);
-		//printf("Pre punjenja!\n");
 
 		// Process transactions...
 		int transactionCount = 0;
-		//dm.DoCleanupTxn();
-		cout << "Tu je";
+		dm.DoCleanupTxn();
 		while (transactionCount < 1000000)
 		{
 			c.DoTxn();

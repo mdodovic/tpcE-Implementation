@@ -44,9 +44,8 @@ string CCESUTImpl::ToIdList(TTrade *arr, int count) {
 }
 
 // 5%, Broker init., Mid to Heavy, Read-Only
-bool CCESUTImpl::BrokerVolume( PBrokerVolumeTxnInput pTxnInput ) {
-	return false;
-
+bool CCESUTImpl::BrokerVolume( PBrokerVolumeTxnInput pTxnInput ) 
+{
 	char (*blist)[50] = pTxnInput->broker_list;
 	fout << "EXEC " << "BrokerVolumeFrame1 '" << pTxnInput->sector_name << "', '";
 	fout << blist[0]; 
@@ -61,7 +60,6 @@ bool CCESUTImpl::BrokerVolume( PBrokerVolumeTxnInput pTxnInput ) {
 // 10%, 
 bool CCESUTImpl::TradeResult( PTradeResultTxnInput pTxnInput ) 
 {
-	return false;
 	fout << "EXEC "<< "TradeResultFrame1 " 
 		<< pTxnInput->trade_id << ","
 		<< pTxnInput->trade_price << endl;
@@ -87,8 +85,8 @@ bool CCESUTImpl::CustomerPosition( PCustomerPositionTxnInput pTxnInput ) {
 }
 
 // 18%, Customer init., Medium, Read-Only
-bool CCESUTImpl::MarketWatch( PMarketWatchTxnInput pTxnInput ) { 
-	return false;
+bool CCESUTImpl::MarketWatch( PMarketWatchTxnInput pTxnInput ) 
+{ 
 	if (pTxnInput->acct_id != 0 || pTxnInput->c_id  != 0 || *pTxnInput->industry_name != 0) 
 	{
 		fout << "EXEC " << "MarketWatchFrame1 "
@@ -104,8 +102,8 @@ bool CCESUTImpl::MarketWatch( PMarketWatchTxnInput pTxnInput ) {
 }
 
 // 19%, Customer init., Light, Read-Only
-bool CCESUTImpl::TradeStatus( PTradeStatusTxnInput pTxnInput ) {
-	return false;
+bool CCESUTImpl::TradeStatus( PTradeStatusTxnInput pTxnInput ) 
+{
 	fout << "EXEC " << "TradeStatusFrame1 "
 		<< pTxnInput->acct_id << endl;
 	tsCnt++;
