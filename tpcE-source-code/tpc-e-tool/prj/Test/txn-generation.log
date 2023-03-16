@@ -1,12 +1,12 @@
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.031 CE object constructed using constructor 1 (valid for publication: YES).
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Driver Global Settings:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 CE object constructed using constructor 1 (valid for publication: YES).
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 Driver Global Settings:
 Parameter                               Default	Current	Default?
 Configured Customers:                   5000	1000
 Active Customers:                       5000	1000
 Scale Factor:                           500	500	YES
 Days of Initial Trades:                 300	300	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Transaction Mixes:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 Transaction Mixes:
 Parameter                               Default	Current	Default?
 Broker Volume:                          49	49	YES
 Customer Position:                      130	130	YES
@@ -17,25 +17,25 @@ Trade Order:                            101	101	YES
 Trade Status:                           190	190	YES
 Trade Update:                           20	20	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Broker Volume Parameters:  NONE
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 Broker Volume Parameters:  NONE
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Customer Position Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 Customer Position Parameters:
 Parameter                               Default	Current	Default?
 By Cust ID:                             50	50	YES
 By Tax ID:                              50	50	YES
 Get History:                            50	50	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Market Watch Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 Market Watch Parameters:
 Parameter                               Default	Current	Default?
 By Account ID:                          35	35	YES
 By Industry:                            5	5	YES
 By Watch List:                          60	60	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Security Detail Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 Security Detail Parameters:
 Parameter                               Default	Current	Default?
 LOB Access Pct:                         1	1	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Trade Lookup Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 Trade Lookup Parameters:
 Parameter                               Default	Current	Default?
 Frame 1 Pct:                            30	30	YES
 Frame 2 Pct:                            30	30	YES
@@ -49,7 +49,7 @@ BackOffFromEndTimeFrame2:               115200	115200	YES
 BackOffFromEndTimeFrame3:               12000	12000	YES
 BackOffFromEndTimeFrame4:               30000	30000	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Trade Order Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.280 Trade Order Parameters:
 Parameter                               Default	Current	Default?
 Market Trade Pct:                       60	60	YES
 Limit Trade Pct:                        40	40	YES
@@ -63,7 +63,7 @@ Margin Trade Pct:                       8	8	YES
 Executor as Owner Pct:                  90	90	YES
 Rollback Pct:                           1	1	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.032 Trade Update Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Trade Update Parameters:
 Parameter                               Default	Current	Default?
 Frame 1 Pct:                            33	33	YES
 Frame 2 Pct:                            33	33	YES
@@ -77,7 +77,7 @@ Frame 3 MaxRowsToUpdate:                20	20	YES
 BackOffFromEndTimeFrame2:               115200	115200	YES
 BackOffFromEndTimeFrame3:               12000	12000	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.034 Transaction Mixes:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Transaction Mixes:
 Parameter                               Default	Current	Default?
 Broker Volume:                          49	49	YES
 Customer Position:                      130	130	YES
@@ -88,25 +88,25 @@ Trade Order:                            101	101	YES
 Trade Status:                           190	190	YES
 Trade Update:                           20	20	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.034 Broker Volume Parameters:  NONE
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Broker Volume Parameters:  NONE
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.034 Customer Position Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Customer Position Parameters:
 Parameter                               Default	Current	Default?
 By Cust ID:                             50	50	YES
 By Tax ID:                              50	50	YES
 Get History:                            50	50	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.034 Market Watch Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Market Watch Parameters:
 Parameter                               Default	Current	Default?
 By Account ID:                          35	35	YES
 By Industry:                            5	5	YES
 By Watch List:                          60	60	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.034 Security Detail Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Security Detail Parameters:
 Parameter                               Default	Current	Default?
 LOB Access Pct:                         1	1	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.034 Trade Lookup Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Trade Lookup Parameters:
 Parameter                               Default	Current	Default?
 Frame 1 Pct:                            30	30	YES
 Frame 2 Pct:                            30	30	YES
@@ -120,7 +120,7 @@ BackOffFromEndTimeFrame2:               115200	115200	YES
 BackOffFromEndTimeFrame3:               12000	12000	YES
 BackOffFromEndTimeFrame4:               30000	30000	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.034 Trade Order Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Trade Order Parameters:
 Parameter                               Default	Current	Default?
 Market Trade Pct:                       60	60	YES
 Limit Trade Pct:                        40	40	YES
@@ -134,7 +134,7 @@ Margin Trade Pct:                       8	8	YES
 Executor as Owner Pct:                  90	90	YES
 Rollback Pct:                           1	1	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.034 Trade Update Parameters:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Trade Update Parameters:
 Parameter                               Default	Current	Default?
 Frame 1 Pct:                            33	33	YES
 Frame 2 Pct:                            33	33	YES
@@ -148,32 +148,32 @@ Frame 3 MaxRowsToUpdate:                20	20	YES
 BackOffFromEndTimeFrame2:               115200	115200	YES
 BackOffFromEndTimeFrame3:               12000	12000	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:19:57.035 Driver CE Settings:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.281 Driver CE Settings:
 Parameter                               Value
 Unique ID:                              100
-Txn Mix RNGSeed:                        9710368981159772260
-Txn Input RNGSeed:                      9710368985454739556
+Txn Mix RNGSeed:                        9820707172030349412
+Txn Input RNGSeed:                      9820707176325316708
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:20:06.897 MEE object constructed using c'tor 1 (valid for publication: YES).
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:20:06.897 Driver MEE Settings:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.431 MEE object constructed using c'tor 1 (valid for publication: YES).
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.431 Driver MEE Settings:
 Parameter                               Value
 Unique ID:                              2000
-Ticker Tape RNGSeed:                    9712093015392126928
-Trading Floor RNGSeed:                  9712093019687094224
+Ticker Tape RNGSeed:                    9820742356402440144
+Trading Floor RNGSeed:                  9820742360697407440
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:20:06.946 DM object constructed using constructor 1 (valid for publication: YES).
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:20:06.946 Driver Global Settings:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.475 DM object constructed using constructor 1 (valid for publication: YES).
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.475 Driver Global Settings:
 Parameter                               Default	Current	Default?
 Configured Customers:                   5000	1000
 Active Customers:                       5000	1000
 Scale Factor:                           500	500	YES
 Days of Initial Trades:                 300	300	YES
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:20:06.946 Driver DM Settings:
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.475 Driver DM Settings:
 Parameter                               Value
 Unique ID:                              100
-RNGSeed:                                9712110607578169444
+RNGSeed:                                9820742356402438244
 
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:21:45.692 DM object destroyed.
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:21:45.692 MEE object destroyed.
-EGenLoader (EGen v1.14.0) 0 2023-03-16 15:21:45.699 CE object destroyed.
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.514 DM object destroyed.
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.514 MEE object destroyed.
+EGenLoader (EGen v1.14.0) 0 2023-03-16 15:30:24.522 CE object destroyed.
