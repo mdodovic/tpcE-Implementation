@@ -46,6 +46,8 @@ string CCESUTImpl::ToIdList(TTrade *arr, int count) {
 // 5%, Broker init., Mid to Heavy, Read-Only
 bool CCESUTImpl::BrokerVolume( PBrokerVolumeTxnInput pTxnInput ) 
 {
+	return true;
+
 	char (*blist)[50] = pTxnInput->broker_list;
 	fout << "EXEC " << "BrokerVolumeFrame1 '" << pTxnInput->sector_name << "', '";
 	fout << blist[0]; 
@@ -60,6 +62,8 @@ bool CCESUTImpl::BrokerVolume( PBrokerVolumeTxnInput pTxnInput )
 // 10%, 
 bool CCESUTImpl::TradeResult( PTradeResultTxnInput pTxnInput ) 
 {
+	return true;
+
 	fout << "EXEC "<< "TradeResultFrame1 " 
 		<< pTxnInput->trade_id << ","
 		<< pTxnInput->trade_price << endl;
@@ -69,6 +73,8 @@ bool CCESUTImpl::TradeResult( PTradeResultTxnInput pTxnInput )
 
 // 13%, Customer init., Mid to Heavy, Read-Only
 bool CCESUTImpl::CustomerPosition( PCustomerPositionTxnInput pTxnInput ) { 
+	return true;
+
 	fout << "EXEC " << "CustomerPositionFrame1 "
 		<< pTxnInput->cust_id << ","
 		<< pTxnInput->tax_id << ","
@@ -87,6 +93,8 @@ bool CCESUTImpl::CustomerPosition( PCustomerPositionTxnInput pTxnInput ) {
 // 18%, Customer init., Medium, Read-Only
 bool CCESUTImpl::MarketWatch( PMarketWatchTxnInput pTxnInput ) 
 { 
+	return true;
+
 	if (pTxnInput->acct_id != 0 || pTxnInput->c_id  != 0 || *pTxnInput->industry_name != 0) 
 	{
 		fout << "EXEC " << "MarketWatchFrame1 "
@@ -113,6 +121,8 @@ bool CCESUTImpl::TradeStatus( PTradeStatusTxnInput pTxnInput )
 // 14%, Customer init., Medium, Read-Only
 bool CCESUTImpl::SecurityDetail( PSecurityDetailTxnInput pTxnInput ) 
 { 
+	return true;
+
 	fout << "EXEC " << "SecurityDetailFrame1 "
 		<< pTxnInput->access_lob_flag << ","
 		<< pTxnInput->max_rows_to_return << ","
@@ -126,6 +136,8 @@ bool CCESUTImpl::SecurityDetail( PSecurityDetailTxnInput pTxnInput )
 // 8%, Customer/Broker init., Medium, Read-Only
 bool CCESUTImpl::TradeLookup( PTradeLookupTxnInput pTxnInput ) 
 { 
+	return true;
+
 	if (pTxnInput->frame_to_execute == 1) {
 		fout << "EXEC " << "TradeLookupFrame1 " 
 			<< pTxnInput->max_trades << ","
@@ -158,6 +170,8 @@ bool CCESUTImpl::TradeLookup( PTradeLookupTxnInput pTxnInput )
 // 2%, Read-Write
 bool CCESUTImpl::TradeUpdate( PTradeUpdateTxnInput pTxnInput ) 
 { 
+	return true;
+
 	if (pTxnInput->frame_to_execute == 1)
 	{
 		fout << "EXEC " << "TradeUpdateFrame1 " 
@@ -206,6 +220,8 @@ string EscapeQuote(string str) {
 // 10, ReadWrite,
 bool CCESUTImpl::TradeOrder( PTradeOrderTxnInput pTxnInput, INT32 iTradeType, bool bExecutorIsAccountOwner ) 
 {
+	return true;
+
 	fout << "EXEC " << "TradeOrderFrame1 "
 		<< pTxnInput->acct_id << ",'"
 		<< pTxnInput->exec_f_name << "','"

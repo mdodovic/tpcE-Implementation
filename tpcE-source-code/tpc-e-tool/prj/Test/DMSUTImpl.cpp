@@ -4,6 +4,8 @@ using namespace std;
 using namespace TPCE;
 
 bool DMSUTImpl::DataMaintenance(PDataMaintenanceTxnInput pTxnInput) {
+	return true;
+
 	fout << "EXEC " << "DataMaintenanceFrame1 "
 		<< pTxnInput->acct_id << ", "
 		<< pTxnInput->c_id << ", "
@@ -18,7 +20,8 @@ bool DMSUTImpl::DataMaintenance(PDataMaintenanceTxnInput pTxnInput) {
 }
 
 bool DMSUTImpl::TradeCleanup(PTradeCleanupTxnInput pTxnInput) {
-	fout << "EXEC " << "TradeCleanup " 
+	return true;
+	fout << "EXEC " << "TradeCleanup "
 		<< pTxnInput->start_trade_id << ", '"
 		<< pTxnInput->st_canceled_id << "', '"
 		<< pTxnInput->st_pending_id << "', '"
