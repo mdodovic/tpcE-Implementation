@@ -48,7 +48,7 @@ int main()
 		const int DAYS_OF_INITIAL_TRADE = 300;
 
 		fstream tpceWorkload;
-		tpceWorkload.open("C:/Users/matij/Desktop/HyperRelations/transactions/T_T9F1_Read.sql", ios::out);
+		tpceWorkload.open("C:/Users/matij/Desktop/HyperRelations/transactions/T_T9F1_T3F1_Write.sql", ios::out);
 
 		// Customer request generator
 		CCESUTImpl * sutImpl = new CCESUTImpl(tpceWorkload);
@@ -77,6 +77,7 @@ int main()
 		// Process transactions...
 		int transactionCount = 0;
 		dm.DoCleanupTxn();
+
 		while (transactionCount < 1000)
 		{
 			c.DoTxn();
@@ -84,9 +85,9 @@ int main()
 		}
 
 		m.GenerateTradeResult();
-		
+
 		// Data maintenance
-		while (transactionCount < 100) 
+		while (transactionCount < 10000) 
 		{
 			dm.DoTxn();
 			transactionCount++;
