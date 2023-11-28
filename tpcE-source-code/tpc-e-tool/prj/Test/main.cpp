@@ -48,7 +48,7 @@ int main()
 		const int DAYS_OF_INITIAL_TRADE = 300;
 
 		fstream tpceWorkload;
-		tpceWorkload.open("C:/Users/matij/Desktop/HyperRelations/transactions/T_T9F1_T3F1_Write.sql", ios::out);
+		tpceWorkload.open("C:/Users/matij/Desktop/HyperRelations/transactions/T_sve.sql", ios::out);
 
 		// Customer request generator
 		CCESUTImpl * sutImpl = new CCESUTImpl(tpceWorkload);
