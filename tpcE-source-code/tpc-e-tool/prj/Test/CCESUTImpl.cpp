@@ -79,13 +79,12 @@ bool CCESUTImpl::CustomerPosition( PCustomerPositionTxnInput pTxnInput ) {
 		<< pTxnInput->cust_id << ","
 		<< pTxnInput->tax_id << ","
 		<< pTxnInput->get_history << "," << pTxnInput->acct_id_idx << endl;
-	/*
+	
 	if (pTxnInput->get_history) 
 	{
-	fout << "EXEC " << "CustomerPositionFrame2 " 
-	<< pTxnInput->acct_id_idx << endl;
+	fout << "EXEC " << "CustomerPositionFrame2 " << pTxnInput->acct_id_idx << endl;
 	}
-	*/
+	
 	cpCnt++;
 	return true; 
 }
