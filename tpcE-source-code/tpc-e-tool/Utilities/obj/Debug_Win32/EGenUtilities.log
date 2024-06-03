@@ -1,13 +1,1 @@
-﻿  condition.cpp
-c:\users\matij\desktop\hyperrelations\tpce-implementation\tpce-source-code\tpc-e-tool\utilities\inc\condition.h(70): warning C4512: 'TPCE::CCondition' : assignment operator could not be generated
-          c:\users\matij\desktop\hyperrelations\tpce-implementation\tpce-source-code\tpc-e-tool\utilities\inc\condition.h(51) : see declaration of 'TPCE::CCondition'
-  threading.cpp
-  Random.cpp
-  Money.cpp
-  locking.cpp
-  error.cpp
-  EGenVersion.cpp
-  DateTime.cpp
-  Generating Code...
-c:\users\matij\desktop\hyperrelations\tpce-implementation\tpce-source-code\tpc-e-tool\utilities\src\threading.cpp(76): warning C4702: unreachable code
-  EGenUtilities.vcxproj -> C:\Users\matij\Desktop\HyperRelations\tpcE-Implementation\tpcE-source-code\tpc-e-tool\Utilities\prj\VS2010\..\..\lib\Debug_Win32\EGenUtilities.lib
+﻿  EGenUtilities.vcxproj -> C:\Users\mdodovic\Desktop\tpcE-Implementation\tpcE-source-code\tpc-e-tool\Utilities\prj\VS2010\..\..\lib\Debug_Win32\EGenUtilities.lib

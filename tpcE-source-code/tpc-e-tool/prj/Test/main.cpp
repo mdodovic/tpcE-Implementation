@@ -11,7 +11,7 @@
 using namespace TPCE;
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
 	// dft.iConfiguredCustomerCount = 5000;    // iDefaultLoadUnitSize
 	// dft.iActiveCustomerCount = 5000;        // iDefaultLoadUnitSize
@@ -34,7 +34,7 @@ int main()
 	DataFileManager dfm(dataEnumerationsDir);
 	PDriverCETxnSettings dcetSettings = new TDriverCETxnSettings();
 
-	printf("Pre punjenja1!\n");
+	printf("Pre punjenja1! - %d\n", argc);
 
 	try {
 //		const int CONFIGURED_CUSTOMER_COUNT = 20000;
@@ -48,7 +48,7 @@ int main()
 		const int DAYS_OF_INITIAL_TRADE = 300;
 
 		fstream tpceWorkload;
-		tpceWorkload.open("C:/Users/matij/Desktop/HyperRelations/transactions/T2_130k.sql", ios::out);
+		tpceWorkload.open("C:/Users/mdodovic/Desktop/Hyperrelations/transactions/T2_130k.sql", ios::out);
 
 		// Customer request generator
 		CCESUTImpl * sutImpl = new CCESUTImpl(tpceWorkload);

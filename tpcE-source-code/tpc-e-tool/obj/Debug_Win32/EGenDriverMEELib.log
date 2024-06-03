@@ -1,8 +1,2 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenLogger.vcxproj, EGenNullLoader.vcxproj, EGenTxnHarness.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  WheelTime.cpp
-  MEETradingFloor.cpp
-  MEETickerTape.cpp
-  MEEPriceBoard.cpp
-  MEE.cpp
-  Generating Code...
-  EGenDriverMEELib.vcxproj -> C:\Users\matij\Desktop\HyperRelations\tpcE-Implementation\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\lib\Debug_Win32\EGenDriverMEELib.lib
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (..\..\obj\Debug_Win32\) contains files shared from another project (EGenBaseLoader.vcxproj, EGenDriverCELib.vcxproj, EGenDriverDMLib.vcxproj, EGenFlatFileLoader.vcxproj, EGenGenerateAndLoad.vcxproj, EGenLoader.vcxproj, EGenLogger.vcxproj, EGenMSSQLLoader.vcxproj, EGenNullLoader.vcxproj, EGenTables.vcxproj, EGenTxnHarness.vcxproj, EGenValidate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  EGenDriverMEELib.vcxproj -> C:\Users\mdodovic\Desktop\tpcE-Implementation\tpcE-source-code\tpc-e-tool\prj\VS2010\..\..\lib\Debug_Win32\EGenDriverMEELib.lib
