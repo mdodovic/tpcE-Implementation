@@ -11,7 +11,7 @@
 using namespace TPCE;
 using namespace std;
 
-int main(int argc, char** argv)
+int main()
 {
 	// dft.iConfiguredCustomerCount = 5000;    // iDefaultLoadUnitSize
 	// dft.iActiveCustomerCount = 5000;        // iDefaultLoadUnitSize
@@ -34,7 +34,7 @@ int main(int argc, char** argv)
 	DataFileManager dfm(dataEnumerationsDir);
 	PDriverCETxnSettings dcetSettings = new TDriverCETxnSettings();
 
-	printf("Pre punjenja1! - %d\n", argc);
+	printf("Start ...\n");
 
 	try {
 //		const int CONFIGURED_CUSTOMER_COUNT = 20000;
@@ -48,7 +48,7 @@ int main(int argc, char** argv)
 		const int DAYS_OF_INITIAL_TRADE = 300;
 
 		fstream tpceWorkload;
-		tpceWorkload.open("C:/Users/mdodovic/Desktop/Hyperrelations/transactions/T2_130k.sql", ios::out);
+		tpceWorkload.open("C:/Users/matij/Desktop/HyperRelations/transactions/T_sve.sql", ios::out);
 
 		// Customer request generator
 		CCESUTImpl * sutImpl = new CCESUTImpl(tpceWorkload);
@@ -77,16 +77,17 @@ int main(int argc, char** argv)
 		// Process transactions...
 		int transactionCount = 0;
 		dm.DoCleanupTxn();
-		while (transactionCount < 1000000)
+
+		while (transactionCount < 1000)
 		{
 			c.DoTxn();
 			transactionCount++;
 		}
 
 		m.GenerateTradeResult();
-		
+
 		// Data maintenance
-		while (transactionCount < 100000) 
+		while (transactionCount < 10000) 
 		{
 			dm.DoTxn();
 			transactionCount++;
